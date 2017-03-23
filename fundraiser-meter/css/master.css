@@ -24,6 +24,7 @@ body {
 .diagram {
   height: 300px;
   position: relative;
+  box-sizing: border-box;
 }
 
 .diagram__outer-circle {
@@ -32,36 +33,50 @@ body {
   border: black dashed 1px;
   border-radius: 50%;
   position: absolute;
+  box-sizing: border-box;
 }
 
 .diagram__outer-title {
-  margin: 0;
+  margin: auto;
   text-align: center;
   border: 1px black solid;
   position: absolute;
-  left: 128px;
-  top: -10px;
+  left: 0;
+  right: 0;
+  top: -15px;
   background-color: white;
+  box-sizing: border-box;
+  height: 30px;
+  width: 60px;
+  line-height: 30px;
 }
 
 .diagram__inner-circle {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border: black solid 1px;
   border-radius: 50%;
   position: absolute;
+  margin: auto;
   bottom: 0px;
-  right: 101px;
+  right: 0;
+  left: 0;
   background-color: limegreen;
+  box-sizing: border-box;
 }
 
 .diagram__inner-title {
-    margin: 0;
+    margin: auto;
     position: absolute;
-    bottom: 36px;
-    left: 36px;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     text-align: center;
     border: black solid 1px;
+    height: 30px;
+    width: 60px;
+    line-height: 30px;
 }
 
 .form {

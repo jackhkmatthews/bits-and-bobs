@@ -39,4 +39,7 @@
 ## Wireframes in HTML and CSS
 
 - decided to use BEM class naming convention, haven't tried before and appreciate the need for a convention / order.
-- BLOCKER: how to make height of div equal to width of div?
+- BLOCKER: make div width proportional to height?
+- decided to use strict height and width for parent container, will revisit in time
+- BLOCKER: centre absolutely positioned divs? https://www.smashingmagazine.com/2013/08/absolute-horizontal-vertical-centering-css/
+- 
