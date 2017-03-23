@@ -42,4 +42,7 @@
 - BLOCKER: make div width proportional to height?
 - decided to use strict height and width for parent container, will revisit in time
 - BLOCKER: centre absolutely positioned divs? https://www.smashingmagazine.com/2013/08/absolute-horizontal-vertical-centering-css/
-- 
+
+## Express API
+
+- first create proper file structure  to make code easier to reason about
