@@ -1,11 +1,17 @@
 const express      = require('express');
 const morgan       = require('morgan');
+const mongoose     = require('mongoose');
 
 const app          = express();
 
 const config       = require('./config/config');
 const homeRouter   = require('./config/home-routes');
 const fundRouter   = require('./config/fund-routes');
+
+//connect to the database
+mongoose.connect(config.db, function(){
+  console.log(`connected to ${config.db}`);
+});
 
 //morgan for logging
 app.use(morgan('dev'));
