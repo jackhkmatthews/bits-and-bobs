@@ -33,3 +33,9 @@
 - MVP features: title, one outer circle, one inner circle. Inside inner circle current amount donated. three circular buttons below with the three mounts. target always set to £100. animate to current amount on page load and working buttons.
 
 ## Express server (Static)
+
+- done, bit of a struggle to remember even the basics, too much time spent in word!!!
+
+## Wireframes in HTML and CSS
+
+- decided to use BEM class naming convention, haven't tried before and appreciate the need for a convention / order.
