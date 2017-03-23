@@ -11,6 +11,20 @@ function fundsShow(req, res){
   });
 }
 
+function fundsUpdate(req, res){
+  console.log('fundsUpdate');
+  const id = req.params.id;
+  Fund.findByIdAndUpdate(id, req.body.fund, (err, fund) => {
+    if (err) return res.status(500).json({message: err});
+    if (!fund) return res.status(404).json({message: 'no fund found'});
+    return res.status(200).json({
+      message: 'fund updated',
+      fund
+    });
+  });
+}
+
 module.exports = {
-  show: fundsShow
+  show: fundsShow,
+  update: fundsUpdate
 };

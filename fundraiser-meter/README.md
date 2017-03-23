@@ -46,3 +46,4 @@
 ## Express API
 
 - first create proper file structure  to make code easier to reason about
+- creating fund API, first get (show) and then put (update)

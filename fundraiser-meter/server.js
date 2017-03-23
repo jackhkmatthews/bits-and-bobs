@@ -1,6 +1,7 @@
 const express      = require('express');
 const morgan       = require('morgan');
 const mongoose     = require('mongoose');
+const bodyParser   = require('body-parser');
 
 const app          = express();
 
@@ -15,6 +16,9 @@ mongoose.connect(config.db, function(){
 
 //morgan for logging
 app.use(morgan('dev'));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 //when request made to '/api/fund' server should use fundRouter
 app.use('/api/funds', fundRouter);
