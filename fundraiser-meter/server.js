@@ -3,11 +3,15 @@ const morgan       = require('morgan');
 
 const app          = express();
 
-const homeRouter   = require('./config/home-routes');
 const config       = require('./config/config');
+const homeRouter   = require('./config/home-routes');
+const fundRouter   = require('./config/fund-routes');
 
 //morgan for logging
 app.use(morgan('dev'));
+
+//when request made to '/api/fund' server should use fundRouter
+app.use('/api/funds', fundRouter);
 
 //when request made to '/' server should use the homeRouter
 app.use('/', homeRouter);
