@@ -39,3 +39,4 @@
 ## Wireframes in HTML and CSS
 
 - decided to use BEM class naming convention, haven't tried before and appreciate the need for a convention / order.
+- BLOCKER: how to make height of div equal to width of div?
