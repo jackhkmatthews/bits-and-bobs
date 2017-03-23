@@ -80,7 +80,6 @@ body {
 }
 
 .form {
-    height: 40px;
     text-align: center;
     padding: 10px 0 0 0;
 }
@@ -88,6 +87,8 @@ body {
 .form_button {
     border-radius: 50%;
     background: white;
+    width: 50px;
+    height: 50px;
 }
 
 .form_button:hover {
@@ -95,16 +96,10 @@ body {
 }
 
 .form_button-small {
-    width: 30px;
-    height: 30px;
 }
 
 .form_button-medium {
-    height: 50px;
-    width: 50px;
 }
 
 .form_button-big {
-    height: 100px;
-    width: 100px;
     
