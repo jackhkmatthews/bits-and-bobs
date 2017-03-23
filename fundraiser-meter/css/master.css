@@ -58,9 +58,9 @@ body {
   border-radius: 50%;
   position: absolute;
   margin: auto;
-  bottom: 0px;
+  bottom: -1px;
   right: 0;
-  left: 0;
+  left: -1px;
   background-color: limegreen;
   box-sizing: border-box;
 }
