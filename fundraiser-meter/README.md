@@ -31,3 +31,5 @@
 - mobile first, why not. Will be using skeleton so responsive to this level shouldn't be too tricky.
 - lots of different ideas, none of them perfect - decided with circle, although not entirely sure where to show metrics and probably not at clear as a conventional progress bar I thought it would be fun to play around with it.
 - MVP features: title, one outer circle, one inner circle. Inside inner circle current amount donated. three circular buttons below with the three mounts. target always set to £100. animate to current amount on page load and working buttons.
+
+## Express server (Static)
