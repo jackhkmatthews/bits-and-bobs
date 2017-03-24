@@ -1,1 +1,4 @@
-console.log('hello');
+angular
+.module('fundraiser', [
+  // 'ngResource'
+]);
