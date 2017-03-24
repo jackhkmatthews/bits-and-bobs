@@ -50,4 +50,9 @@
 - seeded data and used insomnia to test API
 - beginning to think I will angular, 2 way data binding becoming more attractive as are angular's AJAX/factory capabilities
 
-## H
+## Angular Front-end
+
+- have decided to map a very simple angular front end to take advantage of two way data-binding and each AJAX request functionality.
+- looking back over angular setup and things feel a little alien, still think it will be worth the work. Will use full file structure to keep code organised.
+- will also introduce bower and gulp.
+- I do not want to write my own gulp file, nor would I really know how, however I was given one by the course which I can reuse. Will also copy from previous package json.
