@@ -24,6 +24,8 @@ function MainCtrl(Fund){
   //exexuted on click of donation button
   vm.incrementAmountRaised = incrementAmountRaised;
 
+  vm.resetFund = resetFund;
+
 
   /////UTILITY FUNCTIONS/////
 
@@ -56,6 +58,14 @@ function MainCtrl(Fund){
       vm.innerCircleDiameter = getInnerCircleDiameter(vm.fund.raised,vm.fund.target, outerCircleArea);
     }
     console.log(vm.fund);
+    Fund
+      .update({id: vm.fund._id}, vm.fund);
+  }
+
+  function resetFund(){
+    vm.fund.raised = 0;
+    vm.fund.remaining = 0;
+    vm.innerCircleDiameter = getInnerCircleDiameter(vm.fund.raised,vm.fund.target, outerCircleArea);
     Fund
       .update({id: vm.fund._id}, vm.fund);
   }
