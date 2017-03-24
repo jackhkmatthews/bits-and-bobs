@@ -2,24 +2,24 @@ angular
   .module('fundraiser')
   .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = [];
-function MainCtrl(){
+MainCtrl.$inject = ['Fund'];
+function MainCtrl(Fund){
   const vm = this;
   const outerCircleDiameter = 300;
   const outerCircleArea = getArea(150);
 
-  vm.fund = {
-    target: 100,
-    raised: 22,
-    remaining: 78
-  };
-
-  vm.innerCircleDiameter = getInnerCircleDiameter(vm.fund.raised, vm.fund.target, outerCircleArea);
-
-  vm.innerCircleStyle = {
-    width: vm.innerCircleDiameter,
-    height: vm.innerCircleDiameter
-  };
+  Fund
+    .query()
+    .$promise
+    .then(function(response){
+      vm.fund = response.fund;
+      console.log(vm.fund);
+      vm.innerCircleDiameter = getInnerCircleDiameter(vm.fund.raised, vm.fund.target, outerCircleArea);
+      vm.innerCircleStyle = {
+        width: vm.innerCircleDiameter,
+        height: vm.innerCircleDiameter
+      };
+    });
 
   //exexuted on click of donation button
   vm.incrementAmountRaised = incrementAmountRaised;
@@ -48,10 +48,15 @@ function MainCtrl(){
     if (vm.fund.raised === vm.fund.target) return;
     if ((vm.fund.raised + amount) >= vm.fund.target) {
       vm.fund.raised = vm.fund.target;
+      vm.fund.remaining = 0;
       vm.innerCircleDiameter = outerCircleDiameter;
     } else {
       vm.fund.raised += amount;
+      vm.fund.remaining -= amount;
       vm.innerCircleDiameter = getInnerCircleDiameter(vm.fund.raised,vm.fund.target, outerCircleArea);
     }
+    console.log(vm.fund);
+    Fund
+      .update({id: vm.fund._id}, vm.fund);
   }
 }

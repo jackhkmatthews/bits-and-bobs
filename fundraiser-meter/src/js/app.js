@@ -1,4 +1,4 @@
 angular
 .module('fundraiser', [
-  // 'ngResource'
+  'ngResource'
 ]);
