@@ -47,3 +47,7 @@
 
 - first create proper file structure  to make code easier to reason about
 - creating fund API, first get (show) and then put (update)
+- seeded data and used insomnia to test API
+- beginning to think I will angular, 2 way data binding becoming more attractive as are angular's AJAX/factory capabilities
+
+## H
