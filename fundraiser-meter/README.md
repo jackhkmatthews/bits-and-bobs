@@ -6,6 +6,7 @@
 
 - first step was to decide which technologies to use.
 - prescribed tech was HTML, CSS and JavaScript but which libraries should I use or do I want to use.
+- decided to use a git and gitHub for version tracking. Shouldn't be too complex so will work on master branch.
 - I decided early on that I wanted the app to be state persistant, to me this means I want to make a simple API linked to a simple database. This will be done locally, I will not deploy the app to heroku.
 - I recognise that the component will include state (data which changes) and therefore would be nice to a front-end frame work, like angular and it's two way data binding, where the UI / view updates automatically when the underlying data changes.
 - Have just started using react to build a simple scoreboard. Although this grants me knowledge of how react automatically re-renders parts of the DOM when state changes I have yet to cover where/how more complex logic and API requests can be integrated.
@@ -56,3 +57,4 @@
 - looking back over angular setup and things feel a little alien, still think it will be worth the work. Will use full file structure to keep code organised.
 - will also introduce bower and gulp.
 - I do not want to write my own gulp file, nor would I really know how, however I was given one by the course which I can reuse. Will also copy from previous package json.
+- Although the above is overkill for this project I do not feel familiar enough with gulp and bower components to write my own.

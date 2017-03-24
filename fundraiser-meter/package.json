@@ -3,6 +3,47 @@
   "version": "1.0.0",
   "description": "code-test",
   "main": "server.js",
+  "gulp": {
+    "srcDir": "src/",
+    "destDir": "public/",
+    "src": {
+      "js": "src/js/",
+      "scss": "src/scss/",
+      "fonts": "src/fonts/",
+      "images": "src/images/"
+    },
+    "dest": {
+      "js": "public/js/",
+      "css": "public/css/",
+      "fonts": "public/fonts/",
+      "images": "public/images/"
+    },
+    "main": {
+      "js": "app.js",
+      "index": "index.html",
+      "scss": "style.scss",
+      "server": "server.js",
+      "gulpfile": "gulpfile.js",
+      "packageJson": "package.json"
+    },
+    "vendor": {
+      "js": "vendor.js",
+      "css": "vendor.css"
+    },
+    "output": {
+      "js": "app.js",
+      "css": "style.css"
+    },
+    "selectors": {
+      "all": "*",
+      "js": "**/*.js",
+      "css": "**/*.css",
+      "scss": "**/*.scss",
+      "html": "**/*.html",
+      "images": "**/*.{png,jpg,jpeg,gif,ico}",
+      "fonts": "**/*.{eot,svg,ttf,woff,woff2}"
+    }
+  },
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
