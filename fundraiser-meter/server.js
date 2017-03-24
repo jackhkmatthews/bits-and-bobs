@@ -27,7 +27,8 @@ app.use('/api/funds', fundRouter);
 app.use('/', homeRouter);
 
 //when static file (e.g JS) requested look for it in the route of repository
-app.use(express.static(`${__dirname}`));
+app.use('/', express.static('public'));
+app.use('/', express.static('bower_components'));
 
 //make express server listen/run on selected port
 app.listen(config.port, console.log(`server listening at port ${config.port}`));
