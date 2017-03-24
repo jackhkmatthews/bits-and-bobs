@@ -52,8 +52,8 @@ body {
 }
 
 .diagram__inner-circle {
-  width: 150px;
-  height: 150px;
+  width: 0px;
+  height: 0px;
   border: black solid 1px;
   border-radius: 50%;
   position: absolute;
@@ -63,34 +63,35 @@ body {
   left: -1px;
   background-color: limegreen;
   box-sizing: border-box;
+  transition: height 1s, width 1s;
 }
 
 .diagram__inner-title {
-    margin: auto;
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    border: black solid 1px;
-    height: 30px;
-    width: 60px;
-    line-height: 30px;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  border: black solid 1px;
+  height: 30px;
+  width: 60px;
+  line-height: 30px;
 }
 
 .form {
-    text-align: center;
-    padding: 10px 0 0 0;
+  text-align: center;
+  padding: 10px 0 0 0;
 }
 
 .form_button {
-    border-radius: 50%;
-    background: white;
-    width: 50px;
-    height: 50px;
+  border-radius: 50%;
+  background: white;
+  width: 50px;
+  height: 50px;
 }
 
 .form_button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }

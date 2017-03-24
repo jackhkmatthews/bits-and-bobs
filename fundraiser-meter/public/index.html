@@ -17,16 +17,19 @@
       <h1 class="meter-component__title">Fundraiser Meter</h1>
       <div class="diagram">
         <div class="diagram__outer-circle">
-          <h3 class="diagram__outer-title">£100</h3>
-          <div class="diagram__inner-circle">
-            <h3 class="diagram__inner-title">£30</h3>
+          <h3 class="diagram__outer-title">£{{main.fund.target}}</h3>
+          <div class="diagram__inner-circle" ng-style="{
+            width: main.innerCircleDiameter + 'px',
+            height: main.innerCircleDiameter + 'px'
+          }">
+            <h3 class="diagram__inner-title">£{{main.fund.raised}}</h3>
           </div>
         </div>
       </div>
       <div class="form">
-        <button type="button" class="form_button form_button-small">£1</button>
-        <button type="button" class="form_button form_button-medium">£5</button>
-        <button type="button" class="form_button form_button-big">£10</button>
+        <button type="button" class="form_button form_button-small" ng-click="main.incrementRaised(1)">£1</button>
+        <button type="button" class="form_button form_button-medium" ng-click="main.incrementRaised(5)">£5</button>
+        <button type="button" class="form_button form_button-big" ng-click="main.incrementRaised(10)">£10</button>
       </div>
     </div>
   </body>
