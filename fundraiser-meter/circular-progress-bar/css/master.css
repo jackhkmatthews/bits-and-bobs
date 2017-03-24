@@ -1,0 +1,61 @@
+.radial-progress {
+  background-color: #d6dadc;
+}
+.radial-progress .circle .fill {
+  background-color: #97a71d;
+}
+.radial-progress {
+  width: 120px;
+  height: 120px;
+}
+.radial-progress .circle .fill,
+.radial-progress .mask {
+  width: 120px;
+  height: 120px;
+}
+.radial-progress .circle .fill {
+  transition: transform 1s;
+}
+.radial-progress .circle .fill {
+  position: absolute;
+  /* rect(<top>, <right>, <bottom>, <left>) */
+}
+.radial-progress {
+  border-radius: 50%;
+}
+.radial-progress .circle .fill {
+  border-radius: 50%;
+}
+.radial-progress .circle .mask {
+  position: absolute;
+  /* rect(<top>, <right>, <bottom>, <left>) */
+}
+.mask {
+  /* rect(<top>, <right>, <bottom>, <left>) */
+  clip: rect(0px, 120px, 120px, 60px);
+}
+.mask .fill {
+  clip: rect(0px, 60px, 120px, 0px);
+}
+.radial-progress .mask.full {
+  transition: transform 1s;
+}
+.radial-progress .inset {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  margin-left: 15px;
+  margin-top: 15px;
+  background-color: #fbfbfb;
+  border-radius: 50%;
+}
+.radial-progress .inset {
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
+}
+.radial-progress .circle .shadow {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2) inset;
+}

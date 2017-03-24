@@ -60,3 +60,15 @@
 - Although the above is overkill for this project I do not feel familiar enough with gulp and bower components to write my own.
 - achieved MVP with dummy data and in angular with one controller. Code isn't great though, will break down into smaller generic functions.
 - MVP with reset button and persistent data complete.
+
+## More detailed designs
+
+- don't actually like the design I currently have and have decided to try and make a radial progress bar.
+- created a pintrest bboard to gather inspiration
+- I have found this guide https://medium.com/@andsens/radial-progress-indicator-using-css-a917b80c43f9#.quehqems8 which I will follow to learn whats required and then make it my own / turn it into something like this https://techcrunch.com/2014/04/17/watch-out-moves-and-human-now-runkeeper-releases-a-movement-app/?ncid=rss
+
+## Implementing designs
+
+- started a new branch to house the rework
+- involves using less, could be tricky
+- npm installed less can use command line functions to convert to css. currently doing that, not sure how to incorporate into gulp just yet.

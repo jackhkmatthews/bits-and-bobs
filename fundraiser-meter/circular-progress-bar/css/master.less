@@ -1,0 +1,101 @@
+@circle-background: #d6dadc;
+@circle-color: #97a71d;
+@circle-size: 120px;
+@transition-length: 1s;
+@inset-size: 90px;
+@inset-color: #fbfbfb;
+@shadow: 6px 6px 10px rgba(0,0,0,0.2);
+
+.radial-progress {
+  background-color: @circle-background;
+  .circle .fill {
+    background-color: @circle-color;
+  }
+}
+
+.radial-progress {
+  width: @circle-size;
+  height: @circle-size;
+  .circle .fill, .mask {
+    width: @circle-size;
+    height: @circle-size;
+  }
+}
+
+.radial-progress {
+  .circle .fill {
+    transition: transform @transition-length;
+  }
+}
+
+.radial-progress {
+  .circle .fill {
+    position: absolute;
+    /* rect(<top>, <right>, <bottom>, <left>) */
+    // clip: rect(0px, @circle-size/2, @circle-size, 0px);
+  }
+}
+
+.radial-progress {
+  border-radius: 50%;
+  .circle .fill {
+    border-radius: 50%;
+  }
+}
+
+.radial-progress {
+  .circle {
+    .mask {
+      position: absolute;
+      /* rect(<top>, <right>, <bottom>, <left>) */
+      // clip: rect(0px,@circle-size,@circle-size,@circle-size/2);
+      .fill {
+        // clip: rect(0px,@circle-size/2,@circle-size,0px);
+      }
+    }
+  }
+}
+
+.mask {
+  /* rect(<top>, <right>, <bottom>, <left>) */
+  clip: rect(0px, @circle-size, @circle-size, @circle-size/2);
+  .fill {
+    clip: rect(0px, @circle-size/2, @circle-size, 0px);
+  }
+}
+
+.radial-progress {
+  .mask.full {
+    transition: transform @transition-length;
+  }
+}
+
+.radial-progress {
+  .inset {
+    width: @inset-size;
+    height: @inset-size;
+    position: absolute;
+    margin-left: (@circle-size - @inset-size)/2;
+    margin-top: (@circle-size - @inset-size)/2;
+    background-color: @inset-color;
+    border-radius: 50%;
+  }
+}
+
+.radial-progress {
+  .inset {
+    box-shadow: @shadow;
+  }
+}
+
+.radial-progress {
+  .circle {
+    .shadow {
+      width: @circle-size;
+      height: @circle-size;
+      position: absolute;
+      border-radius: 50%;
+      box-shadow: @shadow inset;
+    }
+  }
+}
