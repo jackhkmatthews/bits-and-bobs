@@ -59,3 +59,4 @@
 - I do not want to write my own gulp file, nor would I really know how, however I was given one by the course which I can reuse. Will also copy from previous package json.
 - Although the above is overkill for this project I do not feel familiar enough with gulp and bower components to write my own.
 - achieved MVP with dummy data and in angular with one controller. Code isn't great though, will break down into smaller generic functions.
+- MVP with reset button and persistent data complete.
