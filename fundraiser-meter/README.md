@@ -72,3 +72,5 @@
 - started a new branch to house the rework
 - involves using less, could be tricky
 - npm installed less can use command line functions to convert to css. currently doing that, not sure how to incorporate into gulp just yet.
+- clip css property is pretty weird
+- after a long time got something which resembles a circular progress bar. Also understand how it works which is nice.
