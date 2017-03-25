@@ -41,4 +41,8 @@ function MainCtrl(Fund){
     Fund
       .update({id: vm.fund._id}, vm.fund);
   }
+
+  vm.getNumber = function(num) {
+    return new Array(num);
+  };
 }

@@ -1,5 +1,7 @@
 body {
   padding: 30px 0 0 0;
+  font-family: $font;
+  color: $percentage-color;
 }
 
 *:focus {
@@ -7,8 +9,7 @@ body {
 }
 
 .meter-component {
-    border: 1px black solid;
-    background: grey;
+  background: $component-background;
 }
 
 .meter-component {
@@ -17,16 +18,28 @@ body {
   margin: 0 auto;
 }
 
-.meter-component__title {
-  margin: 0;
-  text-align: center;
-  border: 1px solid black;
-  font-size: 24px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
+.title-container {
+  width: $title-container-width;
+  height: $title-container-height;
+  box-shadow: $shadow inset;
+  padding-top: ($title-container-height - $title-container__insert-height)/2;
+  background-color: $circle-background;
+  margin-bottom: 30px;
 }
 
+.title-container__insert {
+  width: $title-container__insert-width;
+  height: $title-container__insert-height;
+  box-shadow: $shadow;
+  margin-left: ($title-container-width - $title-container__insert-width)/2;
+  background-color: $component-background;
+}
 
+.title-container__title {
+  line-height: 60px;
+  text-align: center;
+  margin: 0;
+}
 
 .form {
   text-align: center;
@@ -34,12 +47,32 @@ body {
 }
 
 .form_button {
+  color: $percentage-color;
+  font-weight: bold;
+  border: none;
   border-radius: 50%;
-  background: white;
-  width: 50px;
-  height: 50px;
+  background: $circle-background;
+  width: $button-size;
+  height: $button-size;
+  box-shadow: $shadow inset;
+  padding: 0;
 }
 
 .form_button:hover {
   cursor: pointer;
+}
+
+.form_button_insert {
+  background-color: $component-background;
+  border-radius: 50%;
+  width: $button-insert-size;
+  height: $button-insert-size;
+  line-height: $button-insert-size;
+  margin-left: ($button-size - $button-insert-size)/2;
+  box-shadow: $shadow;
+  transition: box-shadow 0.5s;
+}
+
+.form_button_insert:hover {
+  box-shadow: none;
 }

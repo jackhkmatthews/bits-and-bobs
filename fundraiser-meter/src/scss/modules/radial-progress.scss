@@ -3,6 +3,7 @@
   width: $circle-size;
   height: $circle-size;
   border-radius: 50%;
+  margin: 0 auto;
   .circle {
     .mask.full {
       transition: transform $transition-length;
@@ -48,7 +49,6 @@
       left: ($inset-size - $percentage-text-width) / 2;
       line-height: 1;
       text-align: left;
-      font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
       color: $percentage-color;
       font-weight: 800;
       font-size: $percentage-font-size;
