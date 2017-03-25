@@ -74,3 +74,4 @@
 - npm installed less can use command line functions to convert to css. currently doing that, not sure how to incorporate into gulp just yet.
 - clip css property is pretty weird
 - after a long time got something which resembles a circular progress bar. Also understand how it works which is nice.
+- progress bar working with percentage display. Will now refactor less and try to recreate in sass.
