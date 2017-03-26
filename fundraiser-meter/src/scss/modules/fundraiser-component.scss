@@ -4,14 +4,9 @@ html {
 }
 
 body {
-  padding: 30px 0 0 0;
   font-family: $font;
   color: $percentage-color;
-}
-
-.buffer {
-  height: 30px;
-  width: 100%;
+  margin: 0;
 }
 
 *:focus {
@@ -20,12 +15,9 @@ body {
 
 .meter-component {
   background: $component-background;
-}
-
-.meter-component {
-  width: 330px;
-  height: 520px;
-  margin: 0 auto;
+  width: #{$component-width}px;
+  height: #{$component-height}px;
+  margin: calc((97vh - #{$component-height}px)/2) auto;
   padding-top: 15px;
   border-radius: 15px;
   box-shadow: $shadow;

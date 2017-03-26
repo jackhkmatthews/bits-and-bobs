@@ -1,5 +1,7 @@
 $font: 'Avenir';
 $component-background: #fbfbfb;
+$component-width: 330;
+$component-height: 520;
 $title-container-width: 300px;
 $title-container-height: 70px;
 $title-container__insert-width: 280px;
@@ -10,7 +12,7 @@ $circle-color-low: #f16c20;
 $circle-color-medium: #ebc844;
 $circle-color-high: green;
 $circle-size: 250px;
-$transition-length: 2s;
+$transition-length: 1.5s;
 $inset-size: 210px;
 $inset-color: #fbfbfb;
 $shadow: 6px 6px 10px rgba(0,0,0,0.2);
