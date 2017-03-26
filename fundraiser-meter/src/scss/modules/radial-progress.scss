@@ -22,7 +22,7 @@
         width: $circle-size;
         height: $circle-size;
         border-radius: 50%;
-        transition: transform $transition-length;
+        transition: transform $transition-length, background-color $transition-length;
         position: absolute;
         // clip: rect(0px, $circle-size/2, $circle-size, 0px);
         clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
@@ -46,12 +46,21 @@
     background-color: $component-background;
     border-radius: 50%;
     box-shadow: $shadow;
+    p {
+      text-align: center;
+      margin: 0;
+      position: absolute;
+      top: 70px;
+      left: 61px;
+      font-size: $raised-font-size;
+      text-transform: uppercase;
+    }
     .percentage {
       height: $percentage-font-size;
       transition: width $transition-length;
       width: $percentage-text-width;
       position: absolute;
-      top: ($inset-size - $percentage-font-size) / 2;
+      top: (($inset-size - $percentage-font-size) / 2) + $raised-font-size;
       left: ($inset-size - $percentage-text-width) / 2;
       line-height: 1;
       text-align: left;
@@ -91,6 +100,21 @@ $increment: (180deg - $gap/2) / 100;
     }
     .inset .percentage .numbers {
       width: ($i*$percentage-text-width + $percentage-text-width) + 20;
+    }
+  }
+  $i: $i + 1;
+}
+
+$i: 0;
+@while $i <= 50 {
+  .radial-progress[data-progress="#{$i}"] {
+    .circle {
+      .fill {
+        background-color: $circle-color-low;
+      }
+    }
+    .inset .percentage {
+      color: $circle-color-low;
     }
   }
   $i: $i + 1;
