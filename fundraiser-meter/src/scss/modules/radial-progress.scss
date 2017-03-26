@@ -79,7 +79,7 @@ $increment: 180deg / 100;
       }
     }
     .inset .percentage .numbers {
-      width: $i*$percentage-text-width + $percentage-text-width;
+      width: ($i*$percentage-text-width + $percentage-text-width) + 10;
     }
   }
   $i: $i + 1;
