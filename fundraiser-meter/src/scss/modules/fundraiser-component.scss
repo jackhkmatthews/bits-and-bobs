@@ -31,6 +31,19 @@ body {
   box-shadow: $shadow;
 }
 
+.trapezoid {
+  background-color: $component-background;
+  position: absolute;
+  margin-top: 218px;
+  margin-left: 80px;
+  border-bottom: 32px solid white;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  height: 0;
+  width: 61px;
+  background: none;
+}
+
 .title-container {
   width: $title-container-width;
   height: $title-container-height;

@@ -8,11 +8,15 @@
     .mask.full {
       transition: transform $transition-length;
     }
+    .mask.half {
+      transform: rotate(#{$initial-rotation}deg);
+    }
     .mask {
       width: $circle-size;
       height: $circle-size;
       position: absolute;
-      clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+      // clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+      clip: rect(0px, $circle-size/2, $circle-size, 0px);
       .fill {
         background-color: $circle-color;
         width: $circle-size;
@@ -20,7 +24,9 @@
         border-radius: 50%;
         transition: transform $transition-length;
         position: absolute;
-        clip: rect(0px, $circle-size/2, $circle-size, 0px);
+        // clip: rect(0px, $circle-size/2, $circle-size, 0px);
+        clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+        // clip: rect(0px, 250px, 250px, 125px);
       }
     }
     .shadow {
@@ -37,7 +43,7 @@
     position: absolute;
     margin-left: ($circle-size - $inset-size)/2;
     margin-top: ($circle-size - $inset-size)/2;
-    background-color: $inset-color;
+    background-color: $component-background;
     border-radius: 50%;
     box-shadow: $shadow;
     .percentage {
@@ -68,14 +74,19 @@
 }
 
 $i: 0;
-$increment: 180deg / 100;
+$increment: (180deg - $gap/2) / 100;
 @while $i <= 100 {
   .radial-progress[data-progress="#{$i}"] {
     .circle {
-      .mask.full, .fill {
+      .fill {
         -webkit-transform: rotate($increment * $i);
         -ms-transform: rotate($increment * $i);
         transform: rotate($increment * $i);
+      }
+      .mask.full {
+        -webkit-transform: rotate(($increment * $i) + $initial-rotation);
+        -ms-transform: rotate(($increment * $i) + $initial-rotation);
+        transform: rotate(($increment * $i) + $initial-rotation);
       }
     }
     .inset .percentage .numbers {
