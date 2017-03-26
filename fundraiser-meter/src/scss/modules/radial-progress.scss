@@ -15,7 +15,6 @@
       width: $circle-size;
       height: $circle-size;
       position: absolute;
-      // clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
       clip: rect(0px, $circle-size/2, $circle-size, 0px);
       .fill {
         background-color: $circle-color;
@@ -24,9 +23,7 @@
         border-radius: 50%;
         transition: transform $transition-length, background-color $transition-length;
         position: absolute;
-        // clip: rect(0px, $circle-size/2, $circle-size, 0px);
         clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
-        // clip: rect(0px, 250px, 250px, 125px);
       }
     }
     .shadow {
@@ -38,6 +35,7 @@
     }
   }
   .inset {
+    color: $percentage-color;
     width: $inset-size;
     height: $inset-size;
     position: absolute;
@@ -64,7 +62,6 @@
       left: ($inset-size - $percentage-text-width) / 2;
       line-height: 1;
       text-align: left;
-      color: $percentage-color;
       font-weight: 800;
       font-size: $percentage-font-size;
       overflow: hidden;
@@ -76,6 +73,7 @@
           display: inline-block;
           vertical-align: top;
           text-align: center;
+          transition: color $transition-length;
         }
       }
     }
@@ -106,7 +104,7 @@ $increment: (180deg - $gap/2) / 100;
 }
 
 $i: 0;
-@while $i <= 50 {
+@while $i <= 30 {
   .radial-progress[data-progress="#{$i}"] {
     .circle {
       .fill {
@@ -115,6 +113,20 @@ $i: 0;
     }
     .inset .percentage {
       color: $circle-color-low;
+    }
+  }
+  $i: $i + 1;
+}
+
+@while $i <= 60 {
+  .radial-progress[data-progress="#{$i}"] {
+    .circle {
+      .fill {
+        background-color: $circle-color-medium;
+      }
+    }
+    .inset .percentage {
+      color: $circle-color-medium;
     }
   }
   $i: $i + 1;
