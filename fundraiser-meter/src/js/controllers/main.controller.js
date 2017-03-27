@@ -13,6 +13,7 @@ function MainCtrl(Fund){
     .$promise
     .then(function(response){
       vm.fund = response.fund;
+      if (vm.fund.remaining === 0) vm.complete = true;
     });
 
   //executed on click of donation button

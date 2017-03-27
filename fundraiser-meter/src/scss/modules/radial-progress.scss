@@ -31,7 +31,7 @@
       height: $circle-size;
       position: absolute;
       border-radius: 50%;
-      box-shadow: $shadow inset;
+      box-shadow: $shadow-complete inset;
     }
   }
   .inset {
@@ -43,7 +43,7 @@
     margin-top: ($circle-size - $inset-size)/2;
     background-color: $component-background;
     border-radius: 50%;
-    box-shadow: $shadow;
+    box-shadow: $shadow-complete;
     p {
       width: $percentage-text-width;
       text-align: center;
