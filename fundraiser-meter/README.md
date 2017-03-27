@@ -7,7 +7,7 @@ ___
 
 # Fundraiser Meter Component
 
-![screen shot 2017-03-27 at 11 50 01](https://cloud.githubusercontent.com/assets/20629455/24352968/914b9d88-12e3-11e7-9c15-83fb161b0c9a.png)
+![screen shot 2017-03-27 at 14 29 40](https://cloud.githubusercontent.com/assets/20629455/24358698/e21d2c3e-12f9-11e7-9866-6255b4345c7a.png)
 
 ## Local Setup
 
@@ -118,3 +118,9 @@ Once I had finished the tutorial in a new HTML, LESS and JS folder I created a c
 ![screen shot 2017-03-27 at 12 21 21](https://cloud.githubusercontent.com/assets/20629455/24353946/f6bfd798-12e7-11e7-8154-d13a08da6816.png)
 
 ### 9. Making It My Own
+
+Once I had replaced my original design with the radial progress bar I decided to follow it's design language through to the rest of the component. I also took further inspiration from my pintrest board with regards to the metrics on display.
+
+The finial touches where colour changes and a complete animation.
+
+![screen shot 2017-03-27 at 14 29 40](https://cloud.githubusercontent.com/assets/20629455/24358698/e21d2c3e-12f9-11e7-9866-6255b4345c7a.png)
