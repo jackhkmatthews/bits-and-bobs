@@ -106,4 +106,8 @@ The tutorial was mostly plain sailing however involved using the less preprocess
 
 ![screen shot 2017-03-27 at 12 18 32](https://cloud.githubusercontent.com/assets/20629455/24353864/8beb3278-12e7-11e7-9dc8-42810899c099.png)
 
-Once I had finished the tutorial in a new HTML, LESS and JS folder I created a couple of new branches to maintain my previous work incase I required it later, converted the less code to SCSS and replaces the current circular front end progress diagram with this new radial design:
+Once I had finished the tutorial in a new HTML, LESS and JS folder I created a couple of new branches to maintain my previous work incase I required it later, converted the less code to SCSS and worked on replacing the current circular front end progress diagram with this new radial design:
+
+![screen shot 2017-03-27 at 12 21 21](https://cloud.githubusercontent.com/assets/20629455/24353946/f6bfd798-12e7-11e7-8154-d13a08da6816.png)
+
+### 9. Making It My Own
