@@ -1,3 +1,10 @@
+<img width="595" alt="screen shot 2017-03-27 at 12 28 56" src="https://cloud.githubusercontent.com/assets/20629455/24354324/313f6180-12e9-11e7-94dd-5edcb7914260.png">
+<img width="86" alt="screen shot 2017-03-27 at 12 28 33" src="https://cloud.githubusercontent.com/assets/20629455/24354330/3602bcc6-12e9-11e7-8692-f2602a17d581.png">
+
+___
+<br>
+
+
 # Fundraiser Meter Component
 
 ![screen shot 2017-03-27 at 11 50 01](https://cloud.githubusercontent.com/assets/20629455/24352968/914b9d88-12e3-11e7-9c15-83fb161b0c9a.png)
