@@ -35,7 +35,7 @@
     }
   }
   .inset {
-    color: $percentage-color;
+    color: $font-color;
     width: $inset-size;
     height: $inset-size;
     position: absolute;
@@ -45,15 +45,17 @@
     border-radius: 50%;
     box-shadow: $shadow;
     p {
+      width: $percentage-text-width;
       text-align: center;
       margin: 0;
       position: absolute;
       top: 70px;
-      left: 61px;
+      left: 47px;
       font-size: $raised-font-size;
       text-transform: uppercase;
     }
     .percentage {
+      color: $circle-color-0;
       height: $percentage-font-size;
       transition: width $transition-length;
       width: $percentage-text-width;
@@ -77,6 +79,26 @@
         }
       }
     }
+  }
+  @keyframes shadow-complete {
+    0%   {box-shadow: $shadow-complete inset;}
+    50%  {box-shadow: none;}
+    100% {box-shadow: $shadow-complete inset;}
+  }
+  .shadow.complete {
+    animation-name: shadow-complete;
+    animation-duration: $complete-animation-duration;
+    animation-iteration-count: infinite;
+  }
+  @keyframes inset-complete {
+    0%   {box-shadow: $shadow-complete;}
+    50%  {box-shadow: none;}
+    100% {box-shadow: $shadow-complete;}
+  }
+  .inset.complete {
+    animation-name: inset-complete;
+    animation-duration: $complete-animation-duration;
+    animation-iteration-count: infinite;
   }
 }
 
@@ -104,29 +126,57 @@ $increment: (180deg - $gap/2) / 100;
 }
 
 $i: 0;
-@while $i <= 30 {
+@while $i <= 25 {
   .radial-progress[data-progress="#{$i}"] {
     .circle {
       .fill {
-        background-color: $circle-color-low;
+        background-color: $circle-color-0;
       }
     }
     .inset .percentage {
-      color: $circle-color-low;
+      color: $circle-color-0;
     }
   }
   $i: $i + 1;
 }
 
-@while $i <= 60 {
+@while $i <= 50 {
   .radial-progress[data-progress="#{$i}"] {
     .circle {
       .fill {
-        background-color: $circle-color-medium;
+        background-color: $circle-color-25;
       }
     }
     .inset .percentage {
-      color: $circle-color-medium;
+      color: $circle-color-25;
+    }
+  }
+  $i: $i + 1;
+}
+
+@while $i <= 75 {
+  .radial-progress[data-progress="#{$i}"] {
+    .circle {
+      .fill {
+        background-color: $circle-color-50;
+      }
+    }
+    .inset .percentage {
+      color: $circle-color-50;
+    }
+  }
+  $i: $i + 1;
+}
+
+@while $i <= 100 {
+  .radial-progress[data-progress="#{$i}"] {
+    .circle {
+      .fill {
+        background-color: $circle-color-75;
+      }
+    }
+    .inset .percentage {
+      color: $circle-color-75;
     }
   }
   $i: $i + 1;

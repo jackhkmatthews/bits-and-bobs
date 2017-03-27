@@ -5,8 +5,7 @@ html {
 
 body {
   font-family: $font;
-  color: $percentage-color;
-  margin: 0;
+  color: $font-color;
 }
 
 *:focus {
@@ -34,11 +33,17 @@ body {
   height: 0;
   width: 61px;
   background: none;
+  text-align: center;
   p {
     font-size: 10px;
     text-align: center;
     margin: 0;
+    text-transform: uppercase;
   }
+}
+
+.trapezoid_cup {
+  height: 16px;
 }
 
 .title-container {
@@ -74,8 +79,7 @@ body {
 }
 
 .form_button {
-  color: $percentage-color;
-  font-weight: bold;
+  color: $font-color;
   border: none;
   border-radius: 50%;
   background: $circle-background;
@@ -83,6 +87,7 @@ body {
   height: $button-size;
   box-shadow: $shadow inset;
   padding: 0;
+  text-transform: uppercase;
 }
 
 .form_button:hover {

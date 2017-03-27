@@ -6,6 +6,8 @@ MainCtrl.$inject = ['Fund'];
 function MainCtrl(Fund){
   const vm = this;
 
+  vm.complete = false;
+
   Fund
     .query()
     .$promise
@@ -25,6 +27,7 @@ function MainCtrl(Fund){
   function incrementAmountRaised(amount){
     if (vm.fund.raised === vm.fund.target) return;
     if ((vm.fund.raised + amount) >= vm.fund.target) {
+      vm.complete = true;
       vm.fund.raised = vm.fund.target;
       vm.fund.remaining = 0;
     } else {
@@ -36,6 +39,7 @@ function MainCtrl(Fund){
   }
 
   function resetFund(){
+    vm.complete = false;
     vm.fund.raised = 0;
     vm.fund.remaining = 0;
     Fund

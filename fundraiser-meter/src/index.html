@@ -27,10 +27,11 @@
           <div class="mask half">
             <div class="fill"></div>
           </div>
-          <div class="shadow"></div>
+          <div class="shadow" ng-class="{complete: main.complete}"></div>
         </div>
-        <div class="inset">
-          <p>Raised so far</p>
+        <div class="inset" ng-class="{complete: main.complete}">
+          <p ng-if="!main.complete">Raised so far</p>
+          <p ng-if="main.complete">Congrats!</p>
           <div class="percentage">
             <div class="numbers">
               <span>-</span>
@@ -39,7 +40,7 @@
           </div>
         </div>
         <div class="trapezoid">
-          <p>star</p>
+          <img src="http://localhost:7000/images/cup.png" alt="cup" class="trapezoid_cup">
           <p>Goal: £{{main.fund.target}}</p>
         </div>
       </div>
