@@ -13,7 +13,7 @@ ___
 
 1. Download the fundraiser-meter directory.
 2. Navigate to the route of that directory in terminal.
-3. run `npm i` and `gulp`.
+3. run `npm i`, `node db/seeds` and `gulp` from the terminal.
 4. visit `http://localhost:7000/` in chrome.
 
 ## Stack
