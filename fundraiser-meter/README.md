@@ -1,5 +1,7 @@
 # Fundraiser Meter Component
 
+![screen shot 2017-03-27 at 11 50 01](https://cloud.githubusercontent.com/assets/20629455/24352968/914b9d88-12e3-11e7-9c15-83fb161b0c9a.png)
+
 ## Local Setup
 
 1. Download the fundraiser-meter directory.
@@ -17,7 +19,7 @@ HTML, SCSS, BEM class naming convention (partially), JavaScript and Angular 1.
 - I initially planned to use jQuery however later in the project I decided Angular's AJAX implementation and two-way data-binding would be useful and worth the added bloat and setup time. React was also a consideration however my experience level was too low.
 - I initially intended to use the Skelton.css framework to allow a more responsive component however I never implemented it.
 - I initially thought I wouldn't need to use a css preprocessor however design decisions later in the build made it necessary.
-- From pst projects I recognised the need for a class naming convention and had heard good things about BEM and wanted to try it.
+- From past projects I recognised the need for a class naming convention and had heard good things about BEM and wanted to try it.
 
 ### Back-End
 
@@ -30,7 +32,7 @@ Node.js, Express, Mongoose, MongoDB.
 gulp, git, GitHub, insomnia.
 
 - Due to the scale of the project I assumed one working branch (master) would be sufficient however when I made some major design changes halfway through development I resorted to using some feature branches.
-- Although I have little experience with gulp I knew I could used a previous gulp setup to manage my bower components and JS and SCSS injection.
+- Although I have little experience with gulp I knew I could used a previous gulp setup to manage my bower components and JS and CSS injection.
 
 ## Process
 
@@ -42,71 +44,66 @@ gulp, git, GitHub, insomnia.
 6. Created front-end JS to make API requests and update UI.
 7. Adopted a new design direction.
 8. Adapted the component to these designs in HTML, SCSS and JS.
+9. Build on the new radial progress bar and make it my own.
 
 ### 1. Wireframes
 
-- I began by drawing out several designs and ways of displaying progress. I thought that a circle representation would be the most fun to play with and implement.
-- I was not particularly happy with any of the designs but I was keen to get to an MVP relatively quickly so picked what I thought was the best of the bunch:
+I thought that a circle representation would be the most fun to play with and implement and began by drawing out several designs and ways of displaying progress (found [here](https://github.com/jackhkmatthews/bits-and-bobs/tree/master/fundraiser-meter/dev/wireframes)). I was not particularly happy with my designs but I was keen to get to an MVP relatively quickly so picked what I thought was the best of the bunch:
 
-![wireframe-1](https://cloud.githubusercontent.com/assets/20629455/24351452/962aa642-12dd-11e7-93c5-b57ddfaae1f3.jpg)
-<img width="310" alt="screen shot 2017-03-27 at 11 08 30" src="https://cloud.githubusercontent.com/assets/20629455/24351489/ccb8e52a-12dd-11e7-8387-485dd0fb0228.png">
-
-- The other sketches can be found in `dev/wireframes`.
+![screen shot 2017-03-27 at 12 07 29](https://cloud.githubusercontent.com/assets/20629455/24353551/fd285e7c-12e5-11e7-9458-c91b014f00ce.png)
 
 ### 2. MVP Features
 
 - Title.
 - One outer circle and one inner circle. 
 - Amount donated inside inner circle. 
-- Three circular buttons below with the three amounts which, when pressed, update UI and send request to API to update database. 
+- Three circular buttons with the three amounts which, when pressed, update UI and send request to API to update database. 
 - Target amount always set to £100. 
-- On page load make a request to the API and animate the circle to current amount.
+- On page load make a request to my API and animate the circle to current amount.
 
 ### 3. Express Server (Static)
 
-- Although I was a bit rusty with the setup of a basic express server it quickly came back to me. At this point the server could serve the index.html file and respond to subsequent requests from the browser for CSS and JS files.
+Although I was a bit rusty with the setup of a basic express server it quickly came back to me. At this point the server could serve the index.html file and respond to subsequent requests from the browser for CSS and JS files.
 
 ### 4. Wireframes in HTML and CSS
 
-- I encountered a couple of blockers with regards to centring absolute positioning divs however resolved them with a few google searches.
+I encountered a couple of blockers with regards to centring absolute positioned divs however resolved them with a few google searches.
 
 <img width="1388" alt="screen shot 2017-03-25 at 10 16 17" src="https://cloud.githubusercontent.com/assets/20629455/24351891/7333ae8e-12df-11e7-84f9-5984e2fb65a1.png">
 
 
 ### 5. Express API
 
-- First I implemented a proper file structure to make my code easier to reason about. The file structure style was copied from previous projects completed on the WDI course.
-- I then created the routes for the requests I would be making from my front-end (show and update get and put requests) and seeded some data to my database. Insomnia was then used to test the API.
+I implemented a proper file structure for my express.js web server to make my code easier to reason about, created 'show' and 'update' routes for the requests I would be making from my front-end and seeded some data to my database. Insomnia was then used to test the API.
 
 ![screen shot 2017-03-27 at 11 25 02](https://cloud.githubusercontent.com/assets/20629455/24352142/4c0147c6-12e0-11e7-9c39-ca320d2cedbc.png)
 ![screen shot 2017-03-27 at 11 25 55](https://cloud.githubusercontent.com/assets/20629455/24352143/4c05b20c-12e0-11e7-968d-1795e42a5ae4.png)
 
 ### 6. Angular Front-end
 
-- Again I used the file structure and naming convention of a previous project.
-- At this stage I introduced Bower and Gulp to my workflow. I didn't want to write my own gulp file, nor would did I really know how, so used one from a previous project. The gulp setup was over complex for this project however it was a low priority to remove the parts I was not using. 
-- I also copied from a previous package.json file.
-- MVP with working buttons and persistent data was achieved at this point.
+The Angular structure, naming convention and workflow (gulp, bower, package.json etc) was taken from a previous project of mine. Although it felt like overkill (especially the gulp setup) I thought it provided a quick way to make my code easier to read and maintain.
+
+At this stage a fully functional MVP was achieved.
 
 ### 7. More Detailed Designs
 
-- At this stage I decided the design was not good enough and that I wanted to change it. After some research and further wireframes I decided on a radial progress bar.
+Having achieved MVP I decided the design was not good enough and that I had time to change it.
+
+To gain some fresh ideas I spent some time creating a pintrest board of circular and radial progress bars and decided the bottom left entry was most suitable.
 
 ![screen shot 2017-03-27 at 11 35 07](https://cloud.githubusercontent.com/assets/20629455/24352419/74714e94-12e1-11e7-9830-e7b1722312e5.png)
 
-- After further research I found a SCSS only radial progress bar and tutorial ([here](https://medium.com/@andsens/radial-progress-indicator-using-css-a917b80c43f9#.quehqems8)). I decided on this tutorial as I was keen to learn more CSS animation and because the final product matched what I hoped to achieve and I hoped I would be able to make it my own.  
+After further research I found a SCSS only radial progress bar and tutorial ([here](https://medium.com/@andsens/radial-progress-indicator-using-css-a917b80c43f9#.quehqems8) and screenshot below). I decided on this tutorial as I was keen to learn more CSS animation and because the final product matched what I hoped to achieve would be easy to edit and make my own.  
 
 ![screen shot 2017-03-27 at 11 37 43](https://cloud.githubusercontent.com/assets/20629455/24352514/d0e56322-12e1-11e7-924c-0fe6352ec0c2.png)
 
 
 ### 8. Implementing New Design
 
-- Instead of simply copying and pasting the code from the finished product of the tutorial into my app I wanted to follow it step by step and code along in a new folder within this repository. Once I reached the end of the tutorial I hoped I'd understand the techniques enough to replace my current HTML and CSS, plug the new designs into my Angular app and API and also make it my own.
-- The tutorial was mostly plain sailing however involved using the less preprocessor which I hadn't used before.
-- The radial progress bar works through a combination of overlapping clipped masks, circles and css transitions:
+Instead of copying and pasting the code from the final JSFiddle of the tutorial into my app I wanted to follow it step by step to fully understand the techniques being used. I believed this would serve me well when I came to make it my own and implement it into my MEAN stack app.
 
-![radial-progress-workings](https://cloud.githubusercontent.com/assets/20629455/24352811/e6fbe34c-12e2-11e7-80ef-44a442cdc0d8.jpg)
+The tutorial was mostly plain sailing however involved using the less preprocessor which I hadn't used before and a rather confusing combination of overlapping clipped masks, circles and css transitions:
 
-- Once I had finished the tutorial created a couple of new branches to maintain my previous work incase I required it later and converted the less code to SCSS.
-- Surprisingly this new implementation removed lots of logic and code from my angular controller which was nice.
-- Now working on making it mine and matching rest of component to radial progress bar.
+![screen shot 2017-03-27 at 12 18 32](https://cloud.githubusercontent.com/assets/20629455/24353864/8beb3278-12e7-11e7-9dc8-42810899c099.png)
+
+Once I had finished the tutorial in a new HTML, LESS and JS folder I created a couple of new branches to maintain my previous work incase I required it later, converted the less code to SCSS and replaces the current circular front end progress diagram with this new radial design:
