@@ -36,16 +36,22 @@ var geometry = new THREE.CubeGeometry(10, 10, 10);
 var material = new THREE.MeshLambertMaterial({color: 0xF3FFE2});
 var mesh = new THREE.Mesh(geometry, material);
 mesh.position.set(0, 0, 0);
-scene.add(mesh);
+// scene.add(mesh);
 mesh.rotation.x += 1;
 mesh.rotation.y += 0.7;
 
 //LINE
 var lineMaterial = new THREE.LineBasicMaterial({ color: 0x0000ff});
 var lineGeometry = new THREE.Geometry();
-lineGeometry.vertices.push(new THREE.Vector3(-10, 0, 0));
+lineGeometry.vertices.push(new THREE.Vector3(0, 0, 0));
 lineGeometry.vertices.push(new THREE.Vector3(0, 10, 0));
-lineGeometry.vertices.push(new THREE.Vector3(10, 0, 0));
+lineGeometry.vertices.push(new THREE.Vector3(10, 10, 0));
+lineGeometry.vertices.push(new THREE.Vector3(0, 10, 0));
+lineGeometry.vertices.push(new THREE.Vector3(0, 20, 0));
+lineGeometry.vertices.push(new THREE.Vector3(20, 20, 0));
+lineGeometry.vertices.push(new THREE.Vector3(0, 20, 0));
+lineGeometry.vertices.push(new THREE.Vector3(0, 30, 0));
+lineGeometry.vertices.push(new THREE.Vector3(30, 30, 0));
 var line = new THREE.Line(lineGeometry, lineMaterial);
 scene.add(line);
 
@@ -53,10 +59,10 @@ scene.add(line);
 requestAnimationFrame(render);
 
 function render(){
-	line.rotation.x += 0.01;
-	line.rotation.y += 0.01;
-	mesh.rotation.x += 0.01;
-	mesh.rotation.y += 0.01;
+	// line.rotation.x += 0.01;
+	line.rotation.y += 0.1;
+	// mesh.rotation.x += 0.01;
+	// mesh.rotation.y += 0.01;
 	renderer.render(scene, camera);
 	controls.update();
 	requestAnimationFrame(render);
