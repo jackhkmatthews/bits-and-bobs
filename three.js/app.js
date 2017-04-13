@@ -31,14 +31,18 @@ var light1 = new THREE.PointLight(0xffffff, 0.5);
 light1.position.set(10, 10, 10);
 scene.add(light1);
 
+var container = new THREE.Object3D();
+container.position.set(10, 10, 10);
+scene.add(container);
+
 //CUBE
 var geometry = new THREE.CubeGeometry(10, 10, 10);
 var material = new THREE.MeshLambertMaterial({color: 0xF3FFE2});
 var mesh = new THREE.Mesh(geometry, material);
-mesh.position.set(0, 0, 0);
-// scene.add(mesh);
-mesh.rotation.x += 1;
-mesh.rotation.y += 0.7;
+mesh.position.set(30, 30, 0);
+container.add(mesh);
+// mesh.rotation.x += 1;
+// mesh.rotation.y += 0.7;
 
 //LINE
 var lineMaterial = new THREE.LineBasicMaterial({ color: 0x0000ff});
@@ -63,6 +67,7 @@ function render(){
 	line.rotation.y += 0.1;
 	// mesh.rotation.x += 0.01;
 	// mesh.rotation.y += 0.01;
+	container.rotation.y += 0.01;
 	renderer.render(scene, camera);
 	controls.update();
 	requestAnimationFrame(render);
