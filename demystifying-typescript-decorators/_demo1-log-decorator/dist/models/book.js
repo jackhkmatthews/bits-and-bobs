@@ -9,8 +9,11 @@ var Book = (function () {
         this.publisher = publisher;
     }
     Book.prototype.addRating = function (username, rating, comment) {
+        var arguements = [username, rating, comment];
+        console.log("addRating method called with args: " + JSON.stringify(arguements));
         var ratingObj = new rating_1.default(username, rating, comment);
         this.ratings.push(ratingObj);
+        console.log("addRating method return value: " + JSON.stringify(ratingObj));
         return ratingObj;
     };
     return Book;

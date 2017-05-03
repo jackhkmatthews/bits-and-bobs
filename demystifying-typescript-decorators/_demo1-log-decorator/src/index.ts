@@ -14,3 +14,4 @@ let book10 = new Book('Taking on Needless Dependencies', 'O\'Reilly Media');
 
 book1.addRating('johnsmith', 4, 'Love this book!');
 book1.addRating('sallyjones', 2, 'This book was riddled with mistakes.');
+book1.addRating('jackmatthews', 1, 'Too long, didn\'t read');
