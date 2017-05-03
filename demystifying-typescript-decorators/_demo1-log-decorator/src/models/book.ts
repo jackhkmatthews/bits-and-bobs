@@ -1,5 +1,6 @@
 
 import Rating from './rating';
+import log from '../decorators/log-decorator'
 
 export default class Book {
   title: string;
@@ -12,6 +13,7 @@ export default class Book {
     this.publisher = publisher;
   }
 
+  @log
   addRating(username: string, rating: number, comment: string): Rating {
     let arguements = [username, rating, comment]
 
