@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Rating = (function () {
     function Rating(username, rating, comment) {
         this.username = username;
@@ -7,5 +8,4 @@ var Rating = (function () {
     }
     return Rating;
 }());
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Rating;

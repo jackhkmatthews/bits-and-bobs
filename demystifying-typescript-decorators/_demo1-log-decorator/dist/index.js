@@ -1,5 +1,6 @@
 "use strict";
-var book_1 = require('./models/book');
+Object.defineProperty(exports, "__esModule", { value: true });
+var book_1 = require("./models/book");
 var book1 = new book_1.default('Copying and Pasting from Stack Overflow', 'O\'Reilly Media');
 var book2 = new book_1.default('Resumé Driven Development', 'O\'Reilly Media');
 var book3 = new book_1.default('Blaming the User', 'O\'Reilly Media');
