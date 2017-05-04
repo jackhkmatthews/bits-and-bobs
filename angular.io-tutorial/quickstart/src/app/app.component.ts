@@ -79,8 +79,12 @@ export class AppComponent  {
     this.getHeroes();
   }
 
+  // first arguement is the an annonymous function which is executed in place
+  // of the resolve function in the initial Promise decleration (wherever that
+  // is) and, by convention, recieves one arguement of Data, in this case
+  // heroes.
   getHeroes(): void {
-    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
   }
 
   onSelect(hero: Hero): void {

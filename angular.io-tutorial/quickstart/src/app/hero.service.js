@@ -7,6 +7,12 @@ var HeroService = (function () {
     HeroService.prototype.getHeroes = function () {
         return Promise.resolve(mock_heros_1.HEROES);
     };
+    HeroService.prototype.getHeroesSlowly = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            setTimeout(function () { return resolve(_this.getHeroes()); }, 2000);
+        });
+    };
     return HeroService;
 }());
 exports.HeroService = HeroService;

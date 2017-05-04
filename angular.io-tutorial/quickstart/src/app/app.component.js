@@ -19,9 +19,13 @@ var AppComponent = (function () {
     AppComponent.prototype.ngOnInit = function () {
         this.getHeroes();
     };
+    // first arguement is the an annonymous function which is executed in place
+    // of the resolve function in the initial Promise decleration (wherever that
+    // is) and, by convention, recieves one arguement of Data, in this case
+    // heroes.
     AppComponent.prototype.getHeroes = function () {
         var _this = this;
-        this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
+        this.heroService.getHeroesSlowly().then(function (heroes) { return _this.heroes = heroes; });
     };
     AppComponent.prototype.onSelect = function (hero) {
         this.selectedHero = hero;
