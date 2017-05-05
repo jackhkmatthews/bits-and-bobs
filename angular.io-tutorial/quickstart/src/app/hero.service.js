@@ -10,7 +10,7 @@ var HeroService = (function () {
     HeroService.prototype.getHeroesSlowly = function () {
         var _this = this;
         return new Promise(function (resolve) {
-            setTimeout(function () { return resolve(_this.getHeroes()); }, 500);
+            setTimeout(function () { return resolve(_this.getHeroes()); }, 0);
         });
     };
     HeroService.prototype.getHeroSlowly = function (id) {
