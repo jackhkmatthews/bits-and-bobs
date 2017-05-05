@@ -4,8 +4,10 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   template: `
     <h1>{{title}}</h1>
-    <a routerLink="/heroes">Heroes</a>
-    <a routerLink="/dashboard">Dashoard</a>
+    <nav>
+      <a routerLink="/heroes">Heroes</a>
+      <a routerLink="/dashboard">Dashoard</a>
+    </nav>
     <router-outlet></router-outlet>
   `
 })

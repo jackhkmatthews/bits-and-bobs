@@ -10,8 +10,12 @@ var HeroService = (function () {
     HeroService.prototype.getHeroesSlowly = function () {
         var _this = this;
         return new Promise(function (resolve) {
-            setTimeout(function () { return resolve(_this.getHeroes()); }, 2000);
+            setTimeout(function () { return resolve(_this.getHeroes()); }, 500);
         });
+    };
+    HeroService.prototype.getHeroSlowly = function (id) {
+        return this.getHeroesSlowly()
+            .then(function (heroes) { return heroes.find(function (hero) { return hero.id === id; }); });
     };
     return HeroService;
 }());

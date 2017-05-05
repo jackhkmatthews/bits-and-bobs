@@ -11,8 +11,8 @@ var forms_1 = require("@angular/forms"); // ngModel lives in here
 var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
 var heroes_component_1 = require("./heroes.component");
-var hero_detail_component_1 = require("./hero-detail.component");
 var dashboard_component_1 = require("./dashboard.component");
+var hero_detail_component_1 = require("./hero-detail.component");
 var hero_service_1 = require("./hero.service");
 var AppModule = (function () {
     function AppModule() {
@@ -32,6 +32,10 @@ AppModule = __decorate([
                 {
                     path: 'dashboard',
                     component: dashboard_component_1.DashboardComponent
+                },
+                {
+                    path: 'detail/:id',
+                    component: hero_detail_component_1.HeroDetailComponent
                 },
                 {
                     path: '',

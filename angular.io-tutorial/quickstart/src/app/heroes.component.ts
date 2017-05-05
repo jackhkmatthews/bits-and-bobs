@@ -8,10 +8,9 @@ import { HeroService } from './hero.service';
   template: `
     <h2>My Heroes</h2>
     <ul class="heroes">
-      <li *ngFor="let hero of heroes" (click)="onSelect(hero
-      )" [class.selected]="hero === selectedHero">
+      <a *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]" class="col-1-4">
         <span class="badge">{{hero.id}}</span> {{hero.name}}
-      </li>
+      </a>
     </ul>
     <hero-detail [hero]="selectedHero"></hero-detail>
   `,
