@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page.component';
 import { TurnIndicatorComponent } from './turn-indicator.component';
 import { BoardComponent } from './board.component';
+import { ModeNavigationComponent } from './mode-navigation.component';
 import { GameComponent } from './game.component';
 
 import { CellService } from './cell.service';
@@ -19,6 +20,7 @@ import { CellService } from './cell.service';
     LandingPageComponent,
     TurnIndicatorComponent,
     BoardComponent,
+    ModeNavigationComponent,
     GameComponent
   ],
   imports: [
