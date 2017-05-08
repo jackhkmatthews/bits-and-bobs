@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { LandingPageComponent } from './landing-page.component';
-import { GameComponent } from './game.component';
+import { GameComponent } from './game';
 
 const routes = [
   {

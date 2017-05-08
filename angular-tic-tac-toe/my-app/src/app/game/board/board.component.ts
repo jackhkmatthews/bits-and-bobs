@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import { CellService } from './cell.service';
+import { CellService } from '../shared/cell.service';
 
-import { Cell } from './cell'
+import { Cell } from '../shared/cell'
 
 @Component({
   selector: 'board',
@@ -21,5 +21,11 @@ export class BoardComponent {
   getCells(): void {
     this.cellService.getCells().then(cells => this.cells = cells)
   }
+
+  cellClick() :void {
+    console.log('hello')
+  }
+
+
 
 }
