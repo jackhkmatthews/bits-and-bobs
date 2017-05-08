@@ -26,7 +26,7 @@ var HeroesComponent = (function () {
     // heroes.
     HeroesComponent.prototype.getHeroes = function () {
         var _this = this;
-        this.heroService.getHeroesSlowly().then(function (heroes) { return _this.heroes = heroes; });
+        this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
     };
     HeroesComponent.prototype.onSelect = function (hero) {
         this.selectedHero = hero;
