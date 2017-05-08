@@ -46,7 +46,7 @@ $font-size: 16px;
 body {
   background-color: $main-black;
   color: $text-white;
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
   padding: 0 10%;
   text-transform: uppercase;
   font-weight: bold;
@@ -61,57 +61,57 @@ ul {
 
 /***********player markers********************/
 
-.player-o-selector {
-  border: 0px solid $neon-pink;
-  background-image: repeating-linear-gradient(315deg, transparent, transparent 2px, $neon-pink 2px, $neon-pink 4px);
-}
-
-.player-x-selector {
-  border: 0px solid $neon-green;
-  background-image: repeating-linear-gradient(315deg, transparent, transparent 2px, $neon-green 2px, $neon-green 4px);
-}
+// .player-o-selector {
+//   border: 0px solid $neon-pink;
+//   background-image: repeating-linear-gradient(315deg, transparent, transparent 2px, $neon-pink 2px, $neon-pink 4px);
+// }
+//
+// .player-x-selector {
+//   border: 0px solid $neon-green;
+//   background-image: repeating-linear-gradient(315deg, transparent, transparent 2px, $neon-green 2px, $neon-green 4px);
+// }
 
 /***********Landing Page**********************/
 
-.landing-page-container {
-    padding: 80px 0;
-    text-align: center;
-}
-
-.player-container {
-    width: 200px;
-    margin: 0 auto;
-}
-
-.player-container h1 {
-    float: left;
-    width: 100px;
-    height: 100px;
-    line-height: 100px;
-    box-sizing: border-box;
-    margin: 20px 0;
-}
-
-.landing-page-container h2 {
-    margin: 0 0 20px 0;
-}
-
-.play-button {
-  background-image: repeating-linear-gradient(315deg,transparent,transparent 2px,#4a4a4a 2px,#4a4a4a 4px);
-  width: 100px;
-  margin: 0 auto;
-  height: $button-height;
-  line-height: $button-height;
-}
-
-.fa-long-arrow-up {
-    font-size: 19px;
-    padding: 20px 0 0px;
-}
-
-.landing-page-container p {
-  margin: 0;
-}
+// .landing-page-container {
+//     padding: 80px 0;
+//     text-align: center;
+// }
+//
+// .player-container {
+//     width: 200px;
+//     margin: 0 auto;
+// }
+//
+// .player-container h1 {
+//     float: left;
+//     width: 100px;
+//     height: 100px;
+//     line-height: 100px;
+//     box-sizing: border-box;
+//     margin: 20px 0;
+// }
+//
+// .landing-page-container h2 {
+//     margin: 0 0 20px 0;
+// }
+//
+// .play-button {
+//   background-image: repeating-linear-gradient(315deg,transparent,transparent 2px,#4a4a4a 2px,#4a4a4a 4px);
+//   width: 100px;
+//   margin: 0 auto;
+//   height: $button-height;
+//   line-height: $button-height;
+// }
+//
+// .fa-long-arrow-up {
+//     font-size: 19px;
+//     padding: 20px 0 0px;
+// }
+//
+// .landing-page-container p {
+//   margin: 0;
+// }
 
 /***********Icons*****************************/
 
