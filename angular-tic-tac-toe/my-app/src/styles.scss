@@ -211,37 +211,37 @@ main {
 
 /***********Modes****************************/
 
-aside.game-modes {
-    clear: both;
-    padding: 20px 0;
-    height: $button-height;
-    border-top: 1px solid $line-grey;
-    border-bottom: 1px solid $line-grey;
-    margin: 0 0 10px 0;
-}
-
-.game-modes-container {
-  width: $board-width;
-  margin: 0 auto;
-}
-
-aside.game-modes ul li {
-  float: left;
-  width: $board-width / 3;
-  height: $button-height;
-  text-align: center;
-  line-height: $button-height;
-  border: 1px solid $line-grey;
-  box-sizing: border-box;
-}
-
-aside.game-modes ul li.left{
-  border-right: 0px solid $line-grey;
-}
-
-aside.game-modes ul li.right{
-  border-left: 0px solid $line-grey;
-}
+// aside.game-modes {
+//     clear: both;
+//     padding: 20px 0;
+//     height: $button-height;
+//     border-top: 1px solid $line-grey;
+//     border-bottom: 1px solid $line-grey;
+//     margin: 0 0 10px 0;
+// }
+//
+// .game-modes-container {
+//   width: $board-width;
+//   margin: 0 auto;
+// }
+//
+// aside.game-modes ul li {
+//   float: left;
+//   width: $board-width / 3;
+//   height: $button-height;
+//   text-align: center;
+//   line-height: $button-height;
+//   border: 1px solid $line-grey;
+//   box-sizing: border-box;
+// }
+//
+// aside.game-modes ul li.left{
+//   border-right: 0px solid $line-grey;
+// }
+//
+// aside.game-modes ul li.right{
+//   border-left: 0px solid $line-grey;
+// }
 
 /***********Footer****************************/
 

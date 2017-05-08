@@ -1,0 +1,45 @@
+$main-black: #222222;
+$neon-green: #18DD00;
+$neon-yellow: #E1C829;
+$neon-blue: #2FB5F3;
+$neon-pink: #FC82C3;
+
+$text-white: #fff;
+$line-grey: #9c9c9c;
+
+$board-width: 390px;
+$button-height: 30px;
+
+$font-size: 16px;
+
+mode-navigation {
+    clear: both;
+    padding: 20px 0;
+    height: $button-height;
+    border-top: 1px solid $line-grey;
+    border-bottom: 1px solid $line-grey;
+    margin: 0 0 10px 0;
+}
+
+.mode-buttons {
+  width: $board-width;
+  margin: 0 auto;
+}
+
+.mode-buttons__button {
+  float: left;
+  width: $board-width / 3;
+  height: $button-height;
+  text-align: center;
+  line-height: $button-height;
+  border: 1px solid $line-grey;
+  box-sizing: border-box;
+}
+
+.mode-buttons__button--left{
+  border-right: 0px solid $line-grey;
+}
+
+.mode-buttons__button--right{
+  border-left: 0px solid $line-grey;
+}
