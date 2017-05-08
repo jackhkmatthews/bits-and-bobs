@@ -22,10 +22,8 @@ export class BoardComponent {
     this.cellService.getCells().then(cells => this.cells = cells)
   }
 
-  cellClick() :void {
-    console.log('hello')
+  cellClick(cellId: number) :void {
+    console.log(cellId)
   }
-
-
 
 }

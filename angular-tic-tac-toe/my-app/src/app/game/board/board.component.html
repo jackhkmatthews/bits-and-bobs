@@ -1,7 +1,10 @@
 <main class="clearfix">
   <div class="board clearfix">
     <ul class="board__box clearfix">
-      <li class="board__cell board__cell--{{cell.index}}" *ngFor="let cell of cells">.
+      <li class="board__cell board__cell--{{cell.index}}"
+          *ngFor="let cell of cells"
+          (click)="cellClick(cell.index)"
+      >.
       </li>
     </ul>
   </div>
