@@ -11,6 +11,8 @@ import { TurnIndicatorComponent } from './turn-indicator.component';
 import { BoardComponent } from './board.component';
 import { GameComponent } from './game.component';
 
+import { CellService } from './cell.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,7 @@ import { GameComponent } from './game.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ CellService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
