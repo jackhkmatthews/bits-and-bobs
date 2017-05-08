@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './game.component.html'
 })
 export class GameComponent {
-  
+
 }

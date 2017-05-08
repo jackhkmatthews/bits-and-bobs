@@ -7,12 +7,16 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page.component';
+import { TurnIndicatorComponent } from './turn-indicator.component';
+import { BoardComponent } from './board.component';
 import { GameComponent } from './game.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
+    TurnIndicatorComponent,
+    BoardComponent,
     GameComponent
   ],
   imports: [

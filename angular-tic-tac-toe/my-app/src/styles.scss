@@ -117,37 +117,37 @@ ul {
 
 /***********Board*****************************/
 
-.board-page-container {
-    padding: 20px 0 0 0;
-}
+// .board-page-container {
+//     padding: 20px 0 0 0;
+// }
 
 /***********Header****************************/
 
-header {
-    padding: 20px 0px;
-    height: $button-height;
-    border-top: 1px solid $line-grey;
-    border-bottom: 1px solid $line-grey;
-    margin: 0px 0 20px 0;
-}
+// header {
+//     padding: 20px 0px;
+//     height: $button-height;
+//     border-top: 1px solid $line-grey;
+//     border-bottom: 1px solid $line-grey;
+//     margin: 0px 0 20px 0;
+// }
 
-.turn-container {
-  margin: 0 auto;
-  width: $board-width;
-}
-
-.turn-container ul li {
-    float: left;
-    width: $board-width / 3;
-    height: $button-height;
-    text-align: center;
-    line-height: $button-height;
-    box-sizing: border-box;
-}
-
-.turn-container .reset {
-  border: 1px solid $line-grey;
-}
+// .turn-container {
+//   margin: 0 auto;
+//   width: $board-width;
+// }
+//
+// .turn-container ul li {
+//     float: left;
+//     width: $board-width / 3;
+//     height: $button-height;
+//     text-align: center;
+//     line-height: $button-height;
+//     box-sizing: border-box;
+// }
+//
+// .turn-container .reset {
+//   border: 1px solid $line-grey;
+// }
 
 /***********Board*****************************/
 
@@ -155,33 +155,33 @@ main {
     margin-bottom: 20px;
 }
 
-ul.board {
-    width: $board-width;
-    height: $board-width;
-    margin: 0 auto;
-}
+// ul.board {
+//     width: $board-width;
+//     height: $board-width;
+//     margin: 0 auto;
+// }
 
 /***********Cells*****************************/
 
-li.cell {
-    float: left;
-    width: $board-width / 3;
-    height: $board-width / 3;
-    box-sizing: border-box;
-    line-height: $board-width / 3;
-    text-align: center;
-    font-weight: bold;
-}
+// li.cell {
+//     float: left;
+//     width: $board-width / 3;
+//     height: $board-width / 3;
+//     box-sizing: border-box;
+//     line-height: $board-width / 3;
+//     text-align: center;
+//     font-weight: bold;
+// }
 
-.cell3, .cell4, .cell5 {
-    border-top: 1px solid $line-grey;
-    border-bottom: 1px solid $line-grey;
-}
-
-.cell1, .cell4, .cell7 {
-    border-left: 1px solid $line-grey;
-    border-right: 1px solid $line-grey;
-}
+// .cell3, .cell4, .cell5 {
+//     border-top: 1px solid $line-grey;
+//     border-bottom: 1px solid $line-grey;
+// }
+//
+// .cell1, .cell4, .cell7 {
+//     border-left: 1px solid $line-grey;
+//     border-right: 1px solid $line-grey;
+// }
 
 .cell.x-next:hover{
   color: $neon-green;
