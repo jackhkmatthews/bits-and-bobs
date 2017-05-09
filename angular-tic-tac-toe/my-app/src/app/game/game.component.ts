@@ -12,6 +12,7 @@ export class GameComponent {
   cells: Cell[];
   xIsNext: boolean = true;
   movesMade: number = 0;
+  winner: string = '';
 
   constructor(private cellService: CellService){}
 
@@ -25,6 +26,11 @@ export class GameComponent {
 
   onMove(move: boolean): void {
     this.xIsNext = !this.xIsNext;
+  }
+
+  onWin(winner: string): void {
+    console.log('winner');
+    this.winner = winner;
   }
 
   onReset(reset: boolean): void {

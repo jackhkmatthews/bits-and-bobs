@@ -7,7 +7,9 @@
     [cells]="cells"
     [xIsNext]="xIsNext"
     [movesMade]="movesMade"
-    (onMove)="onMove($event)">
+    [winner]="winner"
+    (onMove)="onMove($event)"
+    (onWin)="onWin($event)">
   </board>
   <mode-navigation></mode-navigation>
 </div>

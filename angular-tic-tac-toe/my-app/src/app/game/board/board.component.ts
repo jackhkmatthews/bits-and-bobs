@@ -17,14 +17,16 @@ export class BoardComponent {
   @Input() cells: Cell[];
   @Input() xIsNext: boolean;
   @Input() movesMade: number;
+  @Input() winner: string;
 
   @Output() onMove = new EventEmitter<boolean>();
+  @Output() onWin = new EventEmitter<string>();
 
   cellClick(cell: Cell) :void {
-    if (!!cell.player) return;
+    if (!!cell.player || this.winner) return;
     this.updateCell(cell, this.xIsNext);
     this.movesMade++
-    // if (this.movesMade > 4) this.checkForWinner(this.xIsNext, this.cells, this.winningCombos)
+    if (this.movesMade > 4) this.checkForWinner(this.xIsNext, this.cells, this.winningCombos)
     this.xIsNext = !this.xIsNext;
     this.onMove.emit(true);
   }
@@ -39,36 +41,29 @@ export class BoardComponent {
     }
   }
 
-  // checkForWinner(xIsNext: boolean, cells: Cell[], winningCombos: Array<any>){
-  //   for (let combo of winningCombos) {
-  //     let cell0 = element[0];
-  //   }
-  // }
+  checkForWinner(xIsNext: boolean, cells: Cell[], winningCombos: Array<any>){
 
-//   function checkForWinner(){
-//   vm.winningBoxCombinations.forEach((element) => {
-//     const box0 = element[0];
-//     const box1 = element[1];
-//     const box2 = element[2];
-//     if (vm.playerOCells.includes(box0) && vm.playerOCells.includes(box1) && vm.playerOCells.includes(box2)){
-//       vm.attributeWinningClass(box0, box1, box2);
-//       vm.winner = true;
-//       console.log('player O wins');
-//     }
-//     if (vm.playerXCells.includes(box0) && vm.playerXCells.includes(box1) && vm.playerXCells.includes(box2)){
-//       vm.attributeWinningClass(box0, box1, box2);
-//       vm.winner = true;
-//       console.log('player X wins');
-//     }
-//   });
-// }
+    let isPlayerX = cell => {
+      return cell.player === 'x';
+    }
+    let isPlayerO = cell => {
+      return cell.player === 'o';
+    }
+
+    let currentPlayerCells = cells.filter(xIsNext? isPlayerX : isPlayerO);
+
+    let currentPlayerIndexes = currentPlayerCells.reduce((acc, cur): Array<any> => {
+      let index = cur.index
+      return acc.concat(index);
+    }, []);
+
+    for (let combo of winningCombos) {
+      if (currentPlayerIndexes.includes(combo[0]) &&
+          currentPlayerIndexes.includes(combo[1]) &&
+          currentPlayerIndexes.includes(combo[2])) {
+            this.onWin.emit(this.xIsNext? 'x' : 'o');
+          }
+      }
+  }
 
 }
-
-// on click change the inner html to x or o depending on who's turn it is
-// set xIsNext variable to true
-// display on screen
-// change on click
-
-// if cell hasnt been played
-// update cell player and html
