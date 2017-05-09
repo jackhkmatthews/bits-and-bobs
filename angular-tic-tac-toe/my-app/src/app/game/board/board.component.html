@@ -4,7 +4,7 @@
       <li class="board__cell board__cell--{{cell.index}}"
           *ngFor="let cell of cells"
           (click)="cellClick(cell.index)"
-      >.
+      >{{cell.html}}
       </li>
     </ul>
   </div>

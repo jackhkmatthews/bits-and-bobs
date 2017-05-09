@@ -11,6 +11,7 @@ import { Cell } from '../shared/cell'
 })
 export class BoardComponent {
   cells: Cell[];
+  xIsNext: boolean = true;
 
   constructor(private cellService: CellService){}
 
@@ -23,7 +24,31 @@ export class BoardComponent {
   }
 
   cellClick(cellId: number) :void {
-    console.log(cellId)
+    let cell = this.cells[cellId];
+    if (!!cell.player) {
+      return;
+    } else {
+      this.updateCell(cell, this.xIsNext);
+      this.xIsNext = !this.xIsNext;
+    }
+  }
+
+  updateCell(cell: Cell, xIsNext: boolean):void {
+    if (xIsNext) {
+      cell.html = 'x';
+      cell.player = 'x';
+    } else {
+      cell.html = 'o';
+      cell.player = 'o';
+    }
   }
 
 }
+
+// on click change the inner html to x or o depending on who's turn it is
+// set xIsNext variable to true
+// display on screen
+// change on click
+
+// if cell hasnt been played
+// update cell player and html
