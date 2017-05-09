@@ -1,5 +1,9 @@
 <div class="game-container">
+  game component: {{ xIsNext }}
   <turn-indicator [xIsNext]="xIsNext"></turn-indicator>
-  <board [xIsNext]="xIsNext"></board>
+  <board
+    [xIsNext]="xIsNext"
+    (onMove)="onMove($event)">
+  </board>
   <mode-navigation></mode-navigation>
 </div>

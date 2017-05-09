@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { CellService } from '../shared/cell.service';
 
@@ -12,6 +12,8 @@ import { Cell } from '../shared/cell'
 export class BoardComponent {
   cells: Cell[];
   @Input() xIsNext: boolean;
+
+  @Output() onMove = new EventEmitter<boolean>();
 
   constructor(private cellService: CellService){}
 
@@ -27,6 +29,7 @@ export class BoardComponent {
     if (!!cell.player) return;
     this.updateCell(cell, this.xIsNext);
     this.xIsNext = !this.xIsNext;
+    this.onMove.emit(true);
   }
 
   updateCell(cell: Cell, xIsNext: boolean):void {

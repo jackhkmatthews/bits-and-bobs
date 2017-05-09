@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
 })
 export class GameComponent {
   xIsNext: boolean = true;
+
+  onMove(move: boolean): void {
+    this.xIsNext = !this.xIsNext;
+  }
 }
