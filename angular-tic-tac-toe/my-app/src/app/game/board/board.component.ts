@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { CellService } from '../shared/cell.service';
 
@@ -11,7 +11,7 @@ import { Cell } from '../shared/cell'
 })
 export class BoardComponent {
   cells: Cell[];
-  xIsNext: boolean = true;
+  @Input() xIsNext: boolean;
 
   constructor(private cellService: CellService){}
 
@@ -23,14 +23,10 @@ export class BoardComponent {
     this.cellService.getCells().then(cells => this.cells = cells)
   }
 
-  cellClick(cellId: number) :void {
-    let cell = this.cells[cellId];
-    if (!!cell.player) {
-      return;
-    } else {
-      this.updateCell(cell, this.xIsNext);
-      this.xIsNext = !this.xIsNext;
-    }
+  cellClick(cell: Cell) :void {
+    if (!!cell.player) return;
+    this.updateCell(cell, this.xIsNext);
+    this.xIsNext = !this.xIsNext;
   }
 
   updateCell(cell: Cell, xIsNext: boolean):void {

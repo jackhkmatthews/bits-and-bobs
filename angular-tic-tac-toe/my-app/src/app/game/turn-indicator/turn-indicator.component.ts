@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'turn-indicator',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./turn-indicator.component.scss']
 })
 export class TurnIndicatorComponent {
-
+  @Input() xIsNext: boolean;
 }
