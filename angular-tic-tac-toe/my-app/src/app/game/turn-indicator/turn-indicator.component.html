@@ -5,7 +5,10 @@
           [ngClass]="{'turn-indicator__player--x': xIsNext }">
           x
       </li>
-      <li class="turn-indicator__reset" (click)="resetCells()">Reset</li>
+      <li class="turn-indicator__reset"
+          (click)="resetCells()">
+          Reset
+      </li>
       <li class="turn-indicator__player"
           [ngClass]="{'turn-indicator__player--o': !xIsNext }">
           o
