@@ -56,51 +56,43 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// const myPromise = new Promise((resolve, reject) => {
-	//   console.log('Creating Promise');
-	//   setTimeout(() => {
-	//     resolve('Hello from promise');
-	//   }, 3000);
-	// });
+	// const source$ = Rx.Observable.interval(1000)
+	//   .take(5);
 
-	// myPromise.then(x => {
-	//   console.log(x);
-	// });
+	// source$.subscribe(
+	//   x => {
+	//     console.log(x);
+	//   },
+	//   err => {
+	//     console.log(err);
+	//   },
+	//   complete => {
+	//     console.log('completed');
+	//   }
+	// )
 
-	// const source$ = Rx.Observable.fromPromise(myPromise);
+	// const source$ = Rx.Observable.timer(5000, 1000);
 
-	// source$.subscribe(x => console.log(x));
+	// source$.subscribe(
+	//   x => {
+	//     console.log(x);
+	//   },
+	//   err => {
+	//     console.log(err);
+	//   },
+	//   complete => {
+	//     console.log('completed');
+	//   }
+	// );
 
-	function getUser(username) {
-	  return _jQuery2.default.ajax({
-	    url: 'https://api.github.com/users/' + username,
-	    dataType: 'jsonp'
-	  }).promise();
-	}
+	var source$ = _Rx2.default.Observable.range(0, 5);
 
-	// getUser('jackhkmatthews')
-	//   .then(x => {
-	//     console.log(x)
-	//   });
-
-	// Rx.Observable.fromPromise(getUser('jackhkmatthews'))
-	// .subscribe(x => {
-	//   $('#name').text(x.data.name);
-	// });
-
-	var inputSource$ = _Rx2.default.Observable.fromEvent((0, _jQuery2.default)('#input'), 'keyup');
-
-	inputSource$.subscribe(function (e) {
-	  getUser(e.target.value).then(function (x) {
-	    console.log('promise: ', x);
-	  });
-	});
-
-	inputSource$.subscribe(function (e) {
-	  _Rx2.default.Observable.fromPromise(getUser(e.target.value)).subscribe(function (x) {
-	    // $('#name').text(x.data.name);
-	    console.log('stream: ', x);
-	  });
+	source$.subscribe(function (x) {
+	  console.log(x);
+	}, function (err) {
+	  console.log(err);
+	}, function (complete) {
+	  console.log('completed');
 	});
 
 /***/ }),
