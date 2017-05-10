@@ -68,16 +68,27 @@
 	//   .subscribe(x => console.log(x));
 
 
-	var source1$ = _Rx2.default.Observable.interval(2000).map(function (v) {
-	  return 'Merge1: ' + v;
+	// const source1$ = Rx.Observable.interval(2000)
+	//   .map(v => 'Merge1: ' + v);
+
+	// const source2$ = Rx.Observable.interval(500)
+	//   .map(v => 'Merge2: ' + v);
+
+	// Rx.Observable.merge(source1$, source2$)
+	//   .take(25)
+	//   .subscribe(x => {
+	//     console.log(x);
+	//   });
+
+	var source1$ = _Rx2.default.Observable.range(0, 5).map(function (v) {
+	  return 'Source 1: ' + v;
+	});
+	var source2$ = _Rx2.default.Observable.range(6, 5).map(function (v) {
+	  return 'Source 2: ' + v;
 	});
 
-	var source2$ = _Rx2.default.Observable.interval(500).map(function (v) {
-	  return 'Merge2: ' + v;
-	});
-
-	_Rx2.default.Observable.merge(source1$, source2$).take(25).subscribe(function (x) {
-	  console.log(x);
+	_Rx2.default.Observable.concat(source2$, source1$).subscribe(function (x) {
+	  return console.log(x);
 	});
 
 /***/ }),
