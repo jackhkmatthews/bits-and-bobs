@@ -56,43 +56,28 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// const source$ = Rx.Observable.interval(2000)
-	//   .take(10)
-	//   .map(v => v * v);
-
-	// source$.subscribe(v => {
-	//   console.log(v);
-	// });
-
-	// const source$ = Rx.Observable.from(['jack', 'james', 'tom'])
-	//   .map(v => v.toUpperCase())
-	//   .map(v => 'I am ' + v + '!');
-
-	// source$.subscribe(v => {
-	//   console.log(v);
-	// });
-
-	// function getGithubUser(username) {
-	//   return $.ajax({
-	//     url: 'https://api.github.com/users/' + username,
-	//     dataType: 'jsonp'
-	//   }).promise();
-	// }
-
-	// Rx.Observable.fromPromise(getGithubUser('jackhkmatthews'))
-	//   .map(user => {
-	//     return user.data.name;
-	//   })
-	//   .subscribe(name => {
-	//     console.log(name);
+	// Rx.Observable.of('Hello')
+	//   .merge(Rx.Observable.of('people'))
+	//   .subscribe(x => {
+	//     console.log(x);
 	//   });
 
-	var users = [{ name: 'will', age: 45 }, { name: 'Jack', age: 9 }, { name: 'Fred', age: 45 }, { name: 'Hannah', age: 34 }];
+	// Rx.Observable.interval(2000)
+	//   .merge(Rx.Observable.interval(500))
+	//   .take(25)
+	//   .subscribe(x => console.log(x));
 
-	var users$ = _Rx2.default.Observable.from(users).pluck('name');
 
-	users$.subscribe(function (x) {
-	  return console.log(x);
+	var source1$ = _Rx2.default.Observable.interval(2000).map(function (v) {
+	  return 'Merge1: ' + v;
+	});
+
+	var source2$ = _Rx2.default.Observable.interval(500).map(function (v) {
+	  return 'Merge2: ' + v;
+	});
+
+	_Rx2.default.Observable.merge(source1$, source2$).take(25).subscribe(function (x) {
+	  console.log(x);
 	});
 
 /***/ }),
