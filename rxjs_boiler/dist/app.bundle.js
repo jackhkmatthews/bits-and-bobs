@@ -56,39 +56,94 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// Rx.Observable.of('Hello')
-	//   .merge(Rx.Observable.of('people'))
-	//   .subscribe(x => {
-	//     console.log(x);
+	// Rx.Observable.of('hello')
+	//   .subscribe(v => {
+	//     Rx.Observable.of(v + ' everyone!')
+	//       .subscribe(x => console.log(x));
 	//   });
 
-	// Rx.Observable.interval(2000)
-	//   .merge(Rx.Observable.interval(500))
-	//   .take(25)
+	// Rx.Observable.of('Hello')
+	//   .mergeMap(v => {
+	//     return Rx.Observable.of(v + ' Everyone');
+	//   })
 	//   .subscribe(x => console.log(x));
 
-
-	// const source1$ = Rx.Observable.interval(2000)
-	//   .map(v => 'Merge1: ' + v);
-
-	// const source2$ = Rx.Observable.interval(500)
-	//   .map(v => 'Merge2: ' + v);
-
-	// Rx.Observable.merge(source1$, source2$)
-	//   .take(25)
-	//   .subscribe(x => {
-	//     console.log(x);
+	// Rx.Observable.from([1, 3, 5])
+	//   .interval(2000)
+	//   .mergeMap(v => {
+	//     return Rx.Observable.of(v*10)
+	//       .interval(1000);
 	//   });
 
-	var source1$ = _Rx2.default.Observable.range(0, 5).map(function (v) {
-	  return 'Source 1: ' + v;
-	});
-	var source2$ = _Rx2.default.Observable.range(6, 5).map(function (v) {
-	  return 'Source 2: ' + v;
+	//        ||
+	// BAD  \ || /
+	//       \||/
+	//        \/
+
+	// const source$ = new Rx.Observable(observer => {
+	//   setTimeout(() => {
+	//     observer.next(1);
+	//   }, 0);
+
+	//   setTimeout(() => {
+	//     observer.next(3);
+	//   }, 3000);
+
+	//   setTimeout(() => {
+	//     observer.next(5);
+	//   }, 4000);
+
+	// });
+
+	// source$.subscribe(v => {
+	//   return new Rx.Observable(observer => {
+	//     setTimeout(() => {
+	//       observer.next(v*10);
+	//     }, 0);
+	//     setTimeout(() => {
+	//       observer.next(v*10);
+	//     }, 1000);
+	//     setTimeout(() => {
+	//       observer.next(v*10);
+	//     }, 2000);
+	//   }).subscribe(v => {
+	//     console.log(v);
+	//   });
+	// });
+
+
+	//        ||
+	// GOOD \ || /
+	//       \||/
+	//        \/
+	var source$ = new _Rx2.default.Observable(function (observer) {
+	  setTimeout(function () {
+	    observer.next(1);
+	  }, 0);
+
+	  setTimeout(function () {
+	    observer.next(3);
+	  }, 3000);
+
+	  setTimeout(function () {
+	    observer.next(5);
+	  }, 4000);
 	});
 
-	_Rx2.default.Observable.concat(source2$, source1$).subscribe(function (x) {
-	  return console.log(x);
+	source$.mergeMap(function (v) {
+	  return new _Rx2.default.Observable(function (observer) {
+	    setTimeout(function () {
+	      observer.next(v * 10);
+	    }, 0);
+	    setTimeout(function () {
+	      observer.next(v * 10);
+	    }, 1000);
+	    setTimeout(function () {
+	      observer.next(v * 10);
+	    }, 2000);
+	  });
+	}).subscribe(function (v) {
+	  console.log(v);
 	});
 
 /***/ }),
