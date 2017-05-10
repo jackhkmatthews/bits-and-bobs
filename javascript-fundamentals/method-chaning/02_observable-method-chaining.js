@@ -7,7 +7,18 @@ class Observable {
 
     var mappedObservableFunction = (observer) => {
       return this.subscribe({
+        //this is the observer which is passed into the
+        //original ovbservableFn (this.subscribe)
+
+        //next() is then passed i++ from the original
+        //original ovbservableFn (this.subscribe)
         next(x) { 
+          //i++ is then operated on by the mapFn
+          //new value passed to the observer which will be passed
+          //into the new Observable() below at .subscribe({})
+
+          //if .mapped again this would look something like:
+          //observer.next(mapFn(mapFn(x)));
           observer.next(mapFn(x));
         },
         error(err) {
@@ -19,6 +30,7 @@ class Observable {
       });
     };
 
+    //returns a standard new Observable which can also be mapped
     return new Observable(mappedObservableFunction);
   }
 }
