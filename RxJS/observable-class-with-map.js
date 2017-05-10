@@ -4,9 +4,21 @@ class Observable {
   }
 
   map(mapFn) {
-    return new Observable((observer) => {
+
+    var mappedObservableFunction = (observer) => {
       return this.subscribe({
+        //this is the observer which is passed into the
+        //original ovbservableFn (this.subscribe)
+
+        //next() is then passed i++ from the original
+        //original ovbservableFn (this.subscribe)
         next(x) { 
+          //i++ is then operated on by the mapFn
+          //new value passed to the observer which will be passed
+          //into the new Observable() below at .subscribe({})
+
+          //if .mapped again this would look something like:
+          //observer.next(mapFn(mapFn(x)));
           observer.next(mapFn(x));
         },
         error(err) {
@@ -16,7 +28,10 @@ class Observable {
           observer.complete();
         }
       });
-    });
+    };
+
+    //returns a standard new Observable which can also be mapped
+    return new Observable(mappedObservableFunction);
   }
 }
 
@@ -31,23 +46,14 @@ var myObservableFn = (observer) => {
 
 var source$ = new Observable(myObservableFn);
 
-// var teardown = source$
-//   .map(x => x + '!')
-// returns an object of class Observable with method subscribe...
-//   // .map(x => x + '?')
-//   // .map(x => x + '.')
-//   .subscribe({
-//     next(x) { 
-//       console.log(x);
-//     },
-//     complete() {
-//       console.log('done');
-//     }
-//   });
+var teardown = source$
+  .map(x => x + '!')
+  .subscribe({
+    next(x) {
+      console.log(x);
+    }
+  });
 
-// returns an object of class Observable with method subscribe...
-console.log(source$.map(x => x + '!').map(x => x + '!'));
-
-// setTimeout(() => {
-//   teardown();
-// }, 3000);
+setTimeout(() => {
+  teardown();
+}, 3000);
