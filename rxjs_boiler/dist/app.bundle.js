@@ -72,17 +72,27 @@
 	//   console.log(v);
 	// });
 
-	function getGithubUser(username) {
-	  return _jQuery2.default.ajax({
-	    url: 'https://api.github.com/users/' + username,
-	    dataType: 'jsonp'
-	  }).promise();
-	}
+	// function getGithubUser(username) {
+	//   return $.ajax({
+	//     url: 'https://api.github.com/users/' + username,
+	//     dataType: 'jsonp'
+	//   }).promise();
+	// }
 
-	_Rx2.default.Observable.fromPromise(getGithubUser('jackhkmatthews')).map(function (user) {
-	  return user.data.name;
-	}).subscribe(function (name) {
-	  console.log(name);
+	// Rx.Observable.fromPromise(getGithubUser('jackhkmatthews'))
+	//   .map(user => {
+	//     return user.data.name;
+	//   })
+	//   .subscribe(name => {
+	//     console.log(name);
+	//   });
+
+	var users = [{ name: 'will', age: 45 }, { name: 'Jack', age: 9 }, { name: 'Fred', age: 45 }, { name: 'Hannah', age: 34 }];
+
+	var users$ = _Rx2.default.Observable.from(users).pluck('name');
+
+	users$.subscribe(function (x) {
+	  return console.log(x);
 	});
 
 /***/ }),
