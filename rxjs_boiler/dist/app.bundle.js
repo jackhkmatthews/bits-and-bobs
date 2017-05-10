@@ -56,43 +56,33 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// const source$ = Rx.Observable.interval(1000)
-	//   .take(5);
+	// const source$ = Rx.Observable.interval(2000)
+	//   .take(10)
+	//   .map(v => v * v);
 
-	// source$.subscribe(
-	//   x => {
-	//     console.log(x);
-	//   },
-	//   err => {
-	//     console.log(err);
-	//   },
-	//   complete => {
-	//     console.log('completed');
-	//   }
-	// )
+	// source$.subscribe(v => {
+	//   console.log(v);
+	// });
 
-	// const source$ = Rx.Observable.timer(5000, 1000);
+	// const source$ = Rx.Observable.from(['jack', 'james', 'tom'])
+	//   .map(v => v.toUpperCase())
+	//   .map(v => 'I am ' + v + '!');
 
-	// source$.subscribe(
-	//   x => {
-	//     console.log(x);
-	//   },
-	//   err => {
-	//     console.log(err);
-	//   },
-	//   complete => {
-	//     console.log('completed');
-	//   }
-	// );
+	// source$.subscribe(v => {
+	//   console.log(v);
+	// });
 
-	var source$ = _Rx2.default.Observable.range(0, 5);
+	function getGithubUser(username) {
+	  return _jQuery2.default.ajax({
+	    url: 'https://api.github.com/users/' + username,
+	    dataType: 'jsonp'
+	  }).promise();
+	}
 
-	source$.subscribe(function (x) {
-	  console.log(x);
-	}, function (err) {
-	  console.log(err);
-	}, function (complete) {
-	  console.log('completed');
+	_Rx2.default.Observable.fromPromise(getGithubUser('jackhkmatthews')).map(function (user) {
+	  return user.data.name;
+	}).subscribe(function (name) {
+	  console.log(name);
 	});
 
 /***/ }),
