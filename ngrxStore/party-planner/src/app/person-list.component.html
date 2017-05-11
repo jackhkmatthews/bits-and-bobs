@@ -1,9 +1,9 @@
 <h3>Person List</h3>
 <ul>
-  <li *ngFor="let person of people; let index = index;">
+  <li *ngFor="let person of people;">
     Name: {{person.name}} - 
-    Guests: {{person.guests}} <button (click)="addGuest(index)">+</button> <button (click)="removeGuest(index)" *ngIf="person.guests > 0">-</button> 
-    Attending? {{person.attending}} <input type="checkbox" (click)="toggleAttending(index)">
-    <button (click)="removePerson(index)">Delete</button>
+    Guests: {{person.guests}} <button (click)="addGuest(person)">+</button> <button (click)="removeGuest(person)" *ngIf="person.guests > 0">-</button> 
+    Attending? {{person.attending}} <input type="checkbox" (click)="toggleAttending(person)" [(ngModel)]="person.attending">
+    <button (click)="removePerson(person)">Delete</button>
   </li>
 </ul>

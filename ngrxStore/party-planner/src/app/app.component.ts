@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-root',
@@ -6,48 +7,44 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  people = [
-    {
-      name: 'Jack',
-      guests: 0,
-      attending: false
-    },
-    {
-      name: 'Vanda',
-      guests: 0,
-      attending: false
-    },
-    {
-      name: 'Chris',
-      guests: 0,
-      attending: false
-    },
-    {
-      name: 'Flo',
-      guests: 0,
-      attending: false
-    },
-  ];
 
   title = 'app works!';
 
+  public people;
+  private id = 0;
+
+  constructor(private store: Store<any>) {
+    store.select('people')
+      .subscribe(people => {
+        this.people = people;
+      });
+  }
+
   addPerson(name) {
-    this.people.push({ name, guests: 0, attending: false});
+    this.store.dispatch({type: 'ADD_PERSON', payload: {
+      id: ++this.id,
+      name,
+      guests: 0,
+      attending: false
+    }});
   }
 
-  addGuest(index) {
-    this.people[index].guests ++;
+  addGuest(person) {
+    this.store.dispatch({type: 'ADD_GUESTS', payload: person});
   }
 
-  removeGuest(index) {
-    this.people[index].guests --;
+  removeGuest(person) {
+    // this.people[person].guests --;
+    this.store.dispatch({type: 'REMOVE_GUESTS', payload: person});
   }
 
-  removePerson(index) {
-    this.people.splice(index, 1);
+  removePerson(person) {
+    // this.people.splice(person, 1);
+    this.store.dispatch({type: 'REMOVE_PERSON', payload: person});
   }
 
-  toggleAttending(index){
-    this.people[index].attending = !this.people[index].attending;
+  toggleAttending(person){
+    // this.people[person].attending = !this.people[index].attending;
+    this.store.dispatch({type: 'TOGGLE_ATTENDING', payload: person});
   }
 }
