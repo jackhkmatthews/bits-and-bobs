@@ -15,15 +15,16 @@ var myObservableFn = (observer) => {
 
 var source$ = new Observable(myObservableFn);
 
-var teardown = source$
-  .subscribe({
-    next(x) { 
+var teardown = source$.subscribe(
+  {
+    next(x) {
       console.log(x);
     },
     complete() {
       console.log('done');
     }
-  });
+  }
+);
 
 setTimeout(() => {
   teardown();
