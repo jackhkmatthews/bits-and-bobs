@@ -10,4 +10,8 @@ import 'rxjs/add/observable/interval';
 export class AppComponent {
   title = 'app works!';
   clock = Observable.interval(1000);
+
+  constructor(){
+    this.clock.subscribe(console.log.bind(console));
+  }
 }
