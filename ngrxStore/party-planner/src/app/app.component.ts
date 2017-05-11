@@ -38,4 +38,8 @@ export class AppComponent {
   addGuest(index) {
     this.people[index].guests ++;
   }
+
+  removeGuest(index) {
+    this.people[index].guests --;
+  }
 }
