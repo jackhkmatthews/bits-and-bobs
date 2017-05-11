@@ -9,6 +9,8 @@ export class PersonListComponent {
 
   @Output() onGuestAdd = new EventEmitter <string> ();
   @Output() onGuestRemove = new EventEmitter <string> ();
+  @Output() onPersonRemove = new EventEmitter <string> ();
+  @Output() onToggle = new EventEmitter <string> ();
 
   addGuest(index){
     this.onGuestAdd.emit(index);
@@ -16,6 +18,14 @@ export class PersonListComponent {
 
   removeGuest(index){
     this.onGuestRemove.emit(index);
+  }
+
+  removePerson(index){
+    this.onPersonRemove.emit(index);
+  }
+
+  toggleAttending(index){
+    this.onToggle.emit(index);
   }
 };
 

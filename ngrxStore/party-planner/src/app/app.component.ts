@@ -42,4 +42,12 @@ export class AppComponent {
   removeGuest(index) {
     this.people[index].guests --;
   }
+
+  removePerson(index) {
+    this.people.splice(index, 1);
+  }
+
+  toggleAttending(index){
+    this.people[index].attending = !this.people[index].attending;
+  }
 }
