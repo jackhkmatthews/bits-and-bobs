@@ -34,17 +34,14 @@ export class AppComponent {
   }
 
   removeGuest(person) {
-    // this.people[person].guests --;
     this.store.dispatch({type: 'REMOVE_GUESTS', payload: person});
   }
 
   removePerson(person) {
-    // this.people.splice(person, 1);
     this.store.dispatch({type: 'REMOVE_PERSON', payload: person});
   }
 
-  toggleAttending(person){
-    // this.people[person].attending = !this.people[index].attending;
+  toggleAttending(person) {
     this.store.dispatch({type: 'TOGGLE_ATTENDING', payload: person});
   }
 }
