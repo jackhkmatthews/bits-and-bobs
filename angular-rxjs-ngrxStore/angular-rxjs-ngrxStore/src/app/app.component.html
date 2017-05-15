@@ -1,11 +1,8 @@
 <input type="number" value="0" #inputNum />
 <button (click)="click$.next(inputNum.value)">Update</button>
-<!--<h1>
-  {{clock | async | date:'yMMMdjms' }}
-</h1>-->
 <app-clock 
   [time]="time | async">
 </app-clock>
 <div *ngFor="let person of people | async">
-  {{person.name}} is in {{person.time}}
+  {{person.name}} is in {{person.time | date:'jms'}}
 </div>
