@@ -44,6 +44,10 @@ const Article = sequelize.define('article', {
         }
       }
     }
+  },
+  approved: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
   }
 }, {
   timestamps: false,
@@ -66,10 +70,15 @@ const Article = sequelize.define('article', {
 Article
   .sync({force: true})
   .then(() => {
-    return Article.create({
+    Article.create({
       title: 'Hello there',
       slug: 'hello-there',
-      body: 'A nothing article about saying hello in different languages'
+      body: 'A nothing article about saying hello in different languages',
+      approved: true
+    }, {
+      fields: ['title', 'body', 'slug']
+    }).then(instertedArticle => {
+      console.log(instertedArticle.dataValues);
     });
   })
   .catch(error => {
