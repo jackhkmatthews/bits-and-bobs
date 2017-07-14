@@ -46,7 +46,21 @@ const Article = sequelize.define('article', {
     }
   }
 }, {
-  timestamps: false
+  timestamps: false,
+  hooks: {
+    beforeValidate: () => {
+      console.log('beforeValidate');
+    },
+    afterValidate: () => {  
+      console.log('afterValidate');
+    },
+    beforeCreate: () => {
+      console.log('beforeCreate');
+    },
+    afterCreate: (res) => {
+      console.log('created article with title:', res.dataValues.title);
+    }
+  }
 });
 
 Article
