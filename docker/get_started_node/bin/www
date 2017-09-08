@@ -2,6 +2,43 @@
 
 console.log(process.env.DOCKER);
 
+// database maybe?
+
+const { Client } = require('pg');
+
+let client = new Client({
+  user: 'postgres',
+  host: '127.0.0.1',
+  password: 'postgres'
+});
+
+exports.client = client;
+
+client.connect();
+
+client.query(`CREATE DATABASE getstartednode`, (err, res) => {
+  client.end();
+  if (err) {
+    console.log('error', err);
+  }
+  if (res) console.log('info', `DB: getstartednode, command: ${res.command}`);
+  client = new Client({
+    user: 'postgres',
+    host: '127.0.0.1',
+    password: 'postgres',
+    database: 'getstartednode'
+  });
+  client.connect();
+  client.query(`CREATE TABLE counter (index int)`, (err, res) => {
+    client.end();
+    if (err) {
+      console.log('error', err);
+    }
+    if (res) console.log('info', `DB: getstartednode, command: ${res.command}`);
+  });
+});
+
+
 /**
  * Module dependencies.
  */

@@ -4,16 +4,28 @@ services:
     # replace username/repo:tag with your name and image details
     image: jackhkmatthews/get-started-node:part1
     deploy:
-      replicas: 10
+      replicas: 5
+      restart_policy:
+        condition: on-failure
       resources:
         limits:
           cpus: "0.1"
           memory: 50M
-      restart_policy:
-        condition: on-failure
     ports:
-      # host:web
       - "3000:3000"
+    networks:
+      - webnet
+  visualizer:
+    image: dockersamples/visualizer:stable
+    ports:
+      - "8080:8080"
+    volumes:
+    # needed as this container visualises which dockers are running. 
+    # Exposes host folder to container.
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
     networks:
       - webnet
 networks:
