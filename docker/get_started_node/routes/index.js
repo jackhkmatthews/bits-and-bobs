@@ -2,11 +2,13 @@ var express = require('express');
 var router = express.Router();
 const { Client } = require('pg');
 
+const host = process.env.DB_HOST || '127.0.0.1';
+
 /* GET home page. */
 router.get('/', function(req, expRes, next) {
   const client = new Client({
     user: 'postgres',
-    host: '127.0.0.1',
+    host: host,
     password: 'postgres',
     database: 'getstartednode'
   });
@@ -16,7 +18,6 @@ router.get('/', function(req, expRes, next) {
     if (err) {
       console.log('error', err);
     }
-    if (res) console.log(res[1].rowCount);
     expRes.render('index', { title: 'Express', counter: res[1].rowCount });
   });
 });

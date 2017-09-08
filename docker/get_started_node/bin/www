@@ -1,41 +1,27 @@
 #!/usr/bin/env node
 
 console.log(process.env.DOCKER);
+console.log(process.env.DB_HOST);
 
 // database maybe?
 
 const { Client } = require('pg');
 
-let client = new Client({
+const host = process.env.DB_HOST || '127.0.0.1';
+
+const client = new Client({
   user: 'postgres',
-  host: '127.0.0.1',
-  password: 'postgres'
+  host: host,
+  password: 'postgres',
+  database: 'getstartednode'
 });
-
-exports.client = client;
-
 client.connect();
-
-client.query(`CREATE DATABASE getstartednode`, (err, res) => {
+client.query(`CREATE TABLE counter (index int)`, (err, res) => {
   client.end();
   if (err) {
     console.log('error', err);
   }
   if (res) console.log('info', `DB: getstartednode, command: ${res.command}`);
-  client = new Client({
-    user: 'postgres',
-    host: '127.0.0.1',
-    password: 'postgres',
-    database: 'getstartednode'
-  });
-  client.connect();
-  client.query(`CREATE TABLE counter (index int)`, (err, res) => {
-    client.end();
-    if (err) {
-      console.log('error', err);
-    }
-    if (res) console.log('info', `DB: getstartednode, command: ${res.command}`);
-  });
 });
 
 

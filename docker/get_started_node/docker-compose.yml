@@ -2,31 +2,22 @@ version: "3"
 services:
   web:
     # replace username/repo:tag with your name and image details
-    image: jackhkmatthews/get-started-node:part1
-    deploy:
-      replicas: 5
-      restart_policy:
-        condition: on-failure
-      resources:
-        limits:
-          cpus: "0.1"
-          memory: 50M
+    image: jackhkmatthews/get-started-node:part2
+    environment:
+      - DB_HOST=db
     ports:
       - "3000:3000"
-    networks:
-      - webnet
-  visualizer:
-    image: dockersamples/visualizer:stable
-    ports:
-      - "8080:8080"
-    volumes:
-    # needed as this container visualises which dockers are running. 
-    # Exposes host folder to container.
-      - "/var/run/docker.sock:/var/run/docker.sock"
-    deploy:
-      placement:
-        constraints: [node.role == manager]
-    networks:
-      - webnet
-networks:
-  webnet:
+    # wait until db container is ready
+    depends_on:
+      - db
+    # makes web container aware of db container name_in_compose:name_in_web
+    links:
+      - db:db
+    # Overrides start command in Dockerfile
+    command: sh -c './wait-for db:5432 -- npm start'
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=getstartednode
